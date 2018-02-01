@@ -1,0 +1,20 @@
+!!!
+%html
+  %head
+    %title Carlsberg Pirates
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  
+    / Import Google Icon Font
+    %link{:href => "https://fonts.googleapis.com/icon?family=Material+Icons", :rel => "stylesheet"}/
+
+    / Material Design fonts
+    %link{:href => "//fonts.googleapis.com/css?family=Roboto:300,400,500,700", :rel => "stylesheet", :type => "text/css"}/
+
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
+%body.purple-body
+  = render 'shared/menu', background_class: 'menu-image-purple'
+  = yield
+  #footer
+    = render 'footer'
