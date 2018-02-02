@@ -51,7 +51,6 @@ group :development, :test do
   gem 'simplecov'
   gem 'timecop'
   gem 'i18n-tasks', '~> 0.9.13'
-  # gem 'better_errors'
   gem 'letter_opener'
 
 end
@@ -79,3 +78,5 @@ gem 'rails_admin'
 gem 'cancancan'
 gem 'font-awesome-rails'
 gem 'materialize-sass'
+gem 'paranoia'
+gem 'materialize-form'

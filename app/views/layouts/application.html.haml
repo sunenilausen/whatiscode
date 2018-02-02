@@ -13,8 +13,7 @@
     %link{:href => "//fonts.googleapis.com/css?family=Roboto:300,400,500,700", :rel => "stylesheet", :type => "text/css"}/
 
     %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
-%body.purple-body
-  = render 'shared/menu', background_class: 'menu-image-purple'
+%body
+  %p.notice= notice
+  %p.alert= alert
   = yield
-  #footer
-    = render 'footer'

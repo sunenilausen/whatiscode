@@ -1,0 +1,27 @@
+%h1 Listing workshops
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th Description
+      %th Difficulty
+      %th Age
+      %th
+      %th
+      %th
+
+  %tbody
+    - @workshops.each do |workshop|
+      %tr
+        %td= workshop.name
+        %td= workshop.description
+        %td= workshop.difficulty
+        %td= workshop.age
+        %td= link_to 'Show', workshop
+        %td= link_to 'Edit', edit_workshop_path(workshop)
+        %td= link_to 'Destroy', workshop, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Workshop', new_workshop_path
