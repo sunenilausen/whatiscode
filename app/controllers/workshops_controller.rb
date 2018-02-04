@@ -1,5 +1,19 @@
 class WorkshopsController < ApplicationController
-  before_action :set_workshop, only: [:show, :edit, :update, :destroy]
+  before_action :set_workshop, only: [:edit, :update, :destroy]
+
+  def web
+    @ccode = <<EOS
+```ruby
+def index
+  @workshops = Workshop.all
+end
+
+def show
+  @workshop = Workshop.find_by(name: params[:name])
+end
+```
+EOS
+  end
 
   # GET /workshops
   # GET /workshops.json
@@ -10,6 +24,7 @@ class WorkshopsController < ApplicationController
   # GET /workshops/1
   # GET /workshops/1.json
   def show
+    @workshop = Workshop.find_by(name: params[:name])
   end
 
   # GET /workshops/new

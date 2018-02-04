@@ -5,7 +5,7 @@
     = f.input :name
     = f.input :description
     = f.input :difficulty
-    = f.input :age
+    = f.input :age, as: :select, collection: [1,2,3]
 
   .form-actions
     = f.button :submit

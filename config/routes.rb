@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  resources :workshops
+  get '/web', to: 'workshops#web'
+  # get '/:name', to: 'workshops#show', as: :workshop
+  # resources :workshops
 
   root to: "workshops#index"
 
