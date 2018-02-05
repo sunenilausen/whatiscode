@@ -2,17 +2,8 @@ class WorkshopsController < ApplicationController
   before_action :set_workshop, only: [:edit, :update, :destroy]
 
   def web
-    @ccode = <<EOS
-```ruby
-def index
-  @workshops = Workshop.all
-end
-
-def show
-  @workshop = Workshop.find_by(name: params[:name])
-end
-```
-EOS
+    @workshop = Workshop.find_by(key: 'web')
+    render :show
   end
 
   # GET /workshops
@@ -24,7 +15,6 @@ EOS
   # GET /workshops/1
   # GET /workshops/1.json
   def show
-    @workshop = Workshop.find_by(name: params[:name])
   end
 
   # GET /workshops/new
@@ -84,6 +74,6 @@ EOS
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def workshop_params
-      params.require(:workshop).permit(:name, :description, :difficulty, :age)
+      params.require(:workshop).permit(:key, :description, :title)
     end
 end

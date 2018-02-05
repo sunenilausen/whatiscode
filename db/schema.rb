@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180202151148) do
+ActiveRecord::Schema.define(version: 20180205150121) do
+
+  create_table "lectures", force: :cascade do |t|
+    t.integer "number"
+    t.string "title"
+    t.text "body"
+    t.integer "workshop_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["workshop_id"], name: "index_lectures_on_workshop_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -30,10 +40,9 @@ ActiveRecord::Schema.define(version: 20180202151148) do
   end
 
   create_table "workshops", force: :cascade do |t|
-    t.string "name"
-    t.string "description"
-    t.string "difficulty"
-    t.integer "age"
+    t.string "title"
+    t.string "key"
+    t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

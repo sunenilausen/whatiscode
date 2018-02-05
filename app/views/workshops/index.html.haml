@@ -3,10 +3,9 @@
 %table
   %thead
     %tr
-      %th Name
+      %th Title
       %th Description
-      %th Difficulty
-      %th Age
+      %th key
       %th
       %th
       %th
@@ -14,10 +13,9 @@
   %tbody
     - @workshops.each do |workshop|
       %tr
-        %td= workshop.name
+        %td= workshop.title
         %td= workshop.description
-        %td= workshop.difficulty
-        %td= workshop.age
+        %td= workshop.key
         %td= link_to 'Show', workshop
         %td= link_to 'Edit', edit_workshop_path(workshop)
         %td= link_to 'Destroy', workshop, method: :delete, data: { confirm: 'Are you sure?' }

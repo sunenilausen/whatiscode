@@ -1,18 +1,16 @@
 %p#notice= notice
 
 %p
-  %b Name:
-  = @workshop.name
+  %b Title:
+  = @workshop.title
 %p
   %b Description:
   = @workshop.description
 %p
-  %b Difficulty:
-  = @workshop.difficulty
-%p
-  %b Age:
-  = @workshop.age
+  %b Key:
+  = @workshop.key
 
-= link_to 'Edit', edit_workshop_path(@workshop)
-\|
-= link_to 'Back', workshops_path
+%p
+  %b Lectures:
+  - @workshop.lectures.each do |lecture|
+    = link_to 'Show', lecture

@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Number:
+  = @lecture.number
+%p
+  %b Title:
+  = @lecture.title
+%p
+  %b Body:
+  = @markdown.render(@lecture.body).html_safe
+%p
+  %b Workshop:
+  = @lecture.workshop
+
+= link_to 'Edit', edit_lecture_path(@lecture)
+\|
+= link_to 'Back', lectures_path

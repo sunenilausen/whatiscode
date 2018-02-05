@@ -1,0 +1,11 @@
+= simple_form_for(@lecture) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :number
+    = f.input :title
+    = f.input :body
+    = f.association :workshop
+
+  .form-actions
+    = f.button :submit
