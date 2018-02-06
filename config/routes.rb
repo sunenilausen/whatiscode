@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   # get '/:name', to: 'workshops#show', as: :workshop
   # resources :workshops
 
-  root to: "workshops#index"
+  root to: "workshops#web"
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
