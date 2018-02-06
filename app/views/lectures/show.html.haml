@@ -1,18 +1,10 @@
-%p#notice= notice
-
-%p
-  %b Number:
-  = @lecture.number
-%p
-  %b Title:
+%h1  
   = @lecture.title
-%p
-  %b Body:
-  = @markdown.render(@lecture.body).html_safe
-%p
-  %b Workshop:
-  = @lecture.workshop
+%h2
+  = @lecture.workshop.title
+  = '#'
+  = @lecture.number
 
-= link_to 'Edit', edit_lecture_path(@lecture)
-\|
-= link_to 'Back', lectures_path
+= @markdown.render(@lecture.body).html_safe
+
+= link_to 'Tilbage', @lecture.workshop

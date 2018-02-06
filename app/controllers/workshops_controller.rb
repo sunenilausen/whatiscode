@@ -15,7 +15,11 @@ class WorkshopsController < ApplicationController
   # GET /workshops/1
   # GET /workshops/1.json
   def show
-    @workshop = Workshop.find_by(key: params[:key])
+    if params[:workshop]
+      @workshop = Workshop.find_by(key: params[:workshop])
+    else
+      @workshop = Workshop.find(params[:id])
+    end
   end
 
   # GET /workshops/new

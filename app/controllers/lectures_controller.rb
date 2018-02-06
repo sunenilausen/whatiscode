@@ -10,8 +10,13 @@ class LecturesController < ApplicationController
   # GET /lectures/1
   # GET /lectures/1.json
   def show
-    @workshop = Workshop.find_by(key: params[:workshop])
-    @lecture = Lecture.find_by(number: params[:lecture], workshop_id: @workshop.id)
+    if params[:workshop]
+      workshop = Workshop.find_by(key: params[:workshop])
+      @lecture = Lecture.find_by(number: params[:lecture], workshop_id: workshop.id)
+    else
+      @lecture = Lecture.find(params[:id])
+    end
+
     render_options = {hard_wrap: true, link_attributes: {rel: 'nofollow'}}
     engine_options = {fenced_code_blocks: true, autolink: true}
     renderer = RougeHTML.new render_options

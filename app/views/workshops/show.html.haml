@@ -1,16 +1,16 @@
-%p#notice= notice
-
 %p
-  %b Title:
+  %b Titel:
   = @workshop.title
 %p
-  %b Description:
+  %b Beskrivelse:
   = @workshop.description
 %p
-  %b Key:
-  = @workshop.key
-
-%p
-  %b Lectures:
+  %b Lektioner:
+.row
   - @workshop.lectures.each do |lecture|
-    = link_to lecture.title, lecture
+    .card
+      .card-content
+        .card-title= lecture.title
+        Her står noget om denne session
+      .card-action
+        = link_to 'Gå til Lektionen', lecture

@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   resources :lectures
+  resources :workshops
   devise_for :users
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  get '/web', to: 'workshops#web'
-  resources :workshops
+  # get '/web', to: 'workshops#web'
   get '/:workshop', to: 'workshops#show'
   get '/:workshop/:lecture', to: 'lectures#show'
   
