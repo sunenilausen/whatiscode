@@ -9,7 +9,8 @@ end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
 # Use sqlite3 as the database for Active Record
-gem 'mysql2'
+gem 'pg'
+# gem 'mysql2'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
@@ -83,3 +84,5 @@ gem 'materialize-form'
 gem 'rails_admin_material'
 gem 'redcarpet'
 gem 'rouge'
+
+ruby "2.4.1"

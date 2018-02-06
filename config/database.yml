@@ -20,8 +20,15 @@ test:
   <<: *default
   database: db/test.sqlite3
 
+# production:
+#   adapter: mysql2
+#   host: db
+#   username: root
+#   password: <%= ENV['MYSQL_ROOT_PASSWORD'] %>
+
 production:
-  adapter: mysql2
-  host: db
-  username: root
-  password: <%= ENV['MYSQL_ROOT_PASSWORD'] %>
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  encoding: unicode
+  database: myapp_production
+  username: myapp
+  password: <%= ENV['MYAPP_DATABASE_PASSWORD'] %>
