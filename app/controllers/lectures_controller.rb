@@ -1,5 +1,5 @@
 class LecturesController < ApplicationController
-  before_action :set_lecture, only: [:show, :edit, :update, :destroy]
+  before_action :set_lecture, only: [:edit, :update, :destroy]
 
   # GET /lectures
   # GET /lectures.json
@@ -10,6 +10,8 @@ class LecturesController < ApplicationController
   # GET /lectures/1
   # GET /lectures/1.json
   def show
+    @workshop = Workshop.find_by(key: params[:workshop])
+    @lecture = Lecture.find_by(number: params[:lecture], workshop_id: @workshop.id)
     render_options = {hard_wrap: true, link_attributes: {rel: 'nofollow'}}
     engine_options = {fenced_code_blocks: true, autolink: true}
     renderer = RougeHTML.new render_options

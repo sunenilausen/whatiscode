@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   get '/web', to: 'workshops#web'
   resources :workshops
+  get '/:workshop', to: 'workshops#show'
+  get '/:workshop/:lecture', to: 'lectures#show'
   
   # get '/:name', to: 'workshops#show', as: :workshop
   # resources :workshops
