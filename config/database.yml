@@ -22,3 +22,6 @@ test:
 
 production:
   adapter: mysql2
+  host: db
+  username: root
+  password: <%= ENV['MYSQL_ROOT_PASSWORD'] %>
