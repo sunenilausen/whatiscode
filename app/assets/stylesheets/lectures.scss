@@ -5,4 +5,15 @@
 
 #doge {
   background-image: url("http://i0.kym-cdn.com/entries/icons/mobile/000/013/564/doge.jpg");
+  background-size: cover;
+  width: 300px;
+}
+
+.redbox {
+  background-color: red;
+  width: 100px;
+  height: 50px;
+}
+.redbox:hover {
+  background-color: blue;
 }
