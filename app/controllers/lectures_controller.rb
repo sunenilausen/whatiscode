@@ -1,4 +1,6 @@
 class LecturesController < ApplicationController
+  load_and_authorize_resource
+  skip_authorize_resource only: [:show, :index]
   before_action :set_lecture, only: [:edit, :update, :destroy]
 
   # GET /lectures

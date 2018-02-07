@@ -1,4 +1,7 @@
 class WorkshopsController < ApplicationController
+  load_and_authorize_resource
+  skip_authorize_resource only: [:show, :index, :web]
+
   before_action :set_workshop, only: [:edit, :update, :destroy]
 
   def web
