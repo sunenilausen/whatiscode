@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get '/:workshop', to: 'workshops#show'
   get '/:workshop/:lecture', to: 'lectures#show'
   
-  root to: "workshops#web"
+  root to: "pages#welcome"
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
