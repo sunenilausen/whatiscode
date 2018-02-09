@@ -2,10 +2,9 @@
   = f.error_notification
 
   .form-inputs
-    = f.input :name
+    = f.input :title
     = f.input :description
-    = f.input :difficulty
-    = f.input :age, as: :select, collection: [1,2,3]
+    = f.input :key
 
   .form-actions
     = f.button :submit
