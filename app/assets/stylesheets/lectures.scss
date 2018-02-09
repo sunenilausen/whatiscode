@@ -17,3 +17,15 @@
 .redbox:hover {
   background-color: blue;
 }
+
+.editor-preview-side {
+  z-index: 9999;
+}
+
+.editor-toolbar.fullscreen {
+  z-index: 9999;
+}
+
+.CodeMirror-fullscreen {
+  z-index: 9999;
+}

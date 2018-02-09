@@ -3,6 +3,9 @@
   %head
     %title Carlsberg Pirates
     = csrf_meta_tags
+    %link{:href => "https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css", :rel => "stylesheet"}/
+    %script{:src => "https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"}
+
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   
@@ -11,6 +14,7 @@
 
     / Material Design fonts
     %link{:href => "//fonts.googleapis.com/css?family=Roboto:300,400,500,700", :rel => "stylesheet", :type => "text/css"}/
+
 
     %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
 %body
