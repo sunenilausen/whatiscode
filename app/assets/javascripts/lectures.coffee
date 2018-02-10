@@ -14,10 +14,6 @@ $(document).on 'turbolinks:load', (e) ->
       italic: '_'
     element: document.getElementById('lecture_body')
     forceSync: true
-    hideIcons: [
-      'guide'
-      'heading'
-    ]
     indentWithTabs: false
     insertTexts:
       horizontalRule: [
