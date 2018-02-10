@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :lectures
+  resources :lectures do
+    member do
+      get 'slides'
+    end
+  end
   resources :workshops
   devise_for :users
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'

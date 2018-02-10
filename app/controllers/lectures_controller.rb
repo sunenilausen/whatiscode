@@ -1,7 +1,7 @@
 class LecturesController < ApplicationController
   load_and_authorize_resource
   skip_authorize_resource only: [:show, :index]
-  before_action :set_lecture, only: [:edit, :update, :destroy]
+  before_action :set_lecture, only: [:edit, :update, :destroy, :slides]
 
   # GET /lectures
   # GET /lectures.json
@@ -72,6 +72,10 @@ class LecturesController < ApplicationController
       format.html { redirect_to lectures_url, notice: 'Lecture was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def slides
+    render layout: 'slides'
   end
 
   private
