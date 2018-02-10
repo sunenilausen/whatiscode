@@ -1,6 +1,7 @@
+import SimpleMDE from "simplemde";
+
 $(document).on('turbolinks:load', function(e) {
-  var simplemde;
-  return simplemde = new SimpleMDE({
+  const simplemde = new SimpleMDE({
     autofocus: true,
     blockStyles: {
       bold: '__',

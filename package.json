@@ -2,7 +2,8 @@
   "name": "railspirates",
   "private": true,
   "dependencies": {
-    "@rails/webpacker": "^3.2.1"
+    "@rails/webpacker": "^3.2.1",
+    "simplemde": "^1.11.2"
   },
   "devDependencies": {
     "webpack-dev-server": "^2.11.1"
