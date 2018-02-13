@@ -1,7 +1,10 @@
 class LecturesController < ApplicationController
   load_and_authorize_resource
-  skip_authorize_resource only: [:show, :index]
-  before_action :set_lecture, only: [:edit, :update, :destroy, :slides]
+  skip_authorize_resource only: [:show, :index, :slides]
+  before_action :set_lecture, only: [:edit, :update, :destroy]
+  before_action :set_lecture_by_key, only: [:show, :slides]
+  before_action :set_renderer, only: [:show]
+  layout 'menuless', only: [:slides]
 
   # GET /lectures
   # GET /lectures.json
@@ -12,17 +15,6 @@ class LecturesController < ApplicationController
   # GET /lectures/1
   # GET /lectures/1.json
   def show
-    if params[:workshop]
-      workshop = Workshop.find_by(key: params[:workshop])
-      @lecture = Lecture.find_by(number: params[:lecture], workshop_id: workshop.id)
-    else
-      @lecture = Lecture.find(params[:id])
-    end
-
-    render_options = {hard_wrap: true, link_attributes: {rel: 'nofollow'}}
-    engine_options = {fenced_code_blocks: true, autolink: true}
-    renderer = RougeHTML.new render_options
-    @markdown = Redcarpet::Markdown.new renderer, engine_options
   end
 
   # GET /lectures/new
@@ -75,13 +67,28 @@ class LecturesController < ApplicationController
   end
 
   def slides
-    render layout: 'slides'
   end
 
   private
+    def set_renderer
+      render_options = {hard_wrap: true, link_attributes: {rel: 'nofollow'}}
+      engine_options = {fenced_code_blocks: true, autolink: true}
+      renderer = RougeHTML.new render_options
+      @markdown = Redcarpet::Markdown.new renderer, engine_options
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_lecture
       @lecture = Lecture.find(params[:id])
+    end
+
+    def set_lecture_by_key
+      if params[:workshop]
+        workshop = Workshop.find_by(key: params[:workshop])
+        @lecture = Lecture.find_by(number: params[:lecture], workshop_id: workshop.id)
+      else
+        set_lecture
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
