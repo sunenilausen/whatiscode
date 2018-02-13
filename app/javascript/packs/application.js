@@ -10,3 +10,4 @@
 import 'simplemde/dist/simplemde.min.css'
 import "./markdown-initializer";
 import "./slides-initializer";
+import './print';
