@@ -10,7 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180207203143) do
+ActiveRecord::Schema.define(version: 20180214143226) do
+
+  create_table "article_lecture_insertions", force: :cascade do |t|
+    t.integer "number"
+    t.integer "article_id"
+    t.integer "lecture_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["article_id"], name: "index_article_lecture_insertions_on_article_id"
+    t.index ["lecture_id"], name: "index_article_lecture_insertions_on_lecture_id"
+  end
+
+  create_table "articles", force: :cascade do |t|
+    t.string "title"
+    t.string "key"
+    t.string "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "lectures", force: :cascade do |t|
     t.integer "number"

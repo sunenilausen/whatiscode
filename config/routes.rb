@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :articles
   resources :lectures do
     member do
       get 'slides'
