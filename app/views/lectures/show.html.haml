@@ -9,4 +9,7 @@
 
 = @markdown.render(@lecture.body).html_safe
 
+- @lecture.articles.each do |article|
+  = @markdown.render(article.body).html_safe
+
 = link_to 'Tilbage', @lecture.workshop

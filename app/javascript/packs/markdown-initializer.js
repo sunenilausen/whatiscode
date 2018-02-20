@@ -7,7 +7,7 @@ $(document).on('turbolinks:load', function(e) {
       bold: '__',
       italic: '_'
     },
-    element: document.getElementById('lecture_body'),
+    element: document.getElementsByClassName("markdown-body")[0],
     forceSync: true,
     indentWithTabs: false,
     insertTexts: {

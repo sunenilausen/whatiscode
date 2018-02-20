@@ -1,6 +1,5 @@
 class LecturesController < ApplicationController
-  load_and_authorize_resource
-  skip_authorize_resource only: [:show, :index, :slides]
+  load_and_authorize_resource only: [:new, :create, :update, :destroy]
   before_action :set_lecture, only: [:edit, :update, :destroy]
   before_action :set_lecture_by_key, only: [:show, :slides]
   before_action :set_renderer, only: [:show]
@@ -20,6 +19,7 @@ class LecturesController < ApplicationController
   # GET /lectures/new
   def new
     @lecture = Lecture.new
+    # @lecture.article_insertions.build
   end
 
   # GET /lectures/1/edit
@@ -93,6 +93,6 @@ class LecturesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def lecture_params
-      params.require(:lecture).permit(:number, :title, :body, :workshop_id)
+      params.require(:lecture).permit(:number, :title, :body, :workshop_id, article_insertions_attributes: [:number, :article_id, :_destroy, :id])
     end
 end

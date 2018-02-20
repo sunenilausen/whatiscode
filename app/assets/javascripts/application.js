@@ -15,4 +15,5 @@
 //= require turbolinks
 //= require materialize-sprockets
 //= require materialize-form
+//= require cocoon
 //= require_tree .

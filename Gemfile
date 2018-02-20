@@ -86,5 +86,6 @@ gem 'materialize-form'
 gem 'rails_admin_material'
 gem 'redcarpet'
 gem 'rouge'
+gem 'cocoon'
 
 ruby "2.4.1"

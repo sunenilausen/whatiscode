@@ -1,6 +1,8 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
-  load_and_authorize_resource, only: [:new, :create, :update, :destroy]
+  load_and_authorize_resource only: [:new, :create, :update, :destroy]
+  before_action :set_renderer, only: [:show]
+  layout 'menuless', only: [:slides]
 
   # GET /articles
   # GET /articles.json
@@ -71,5 +73,12 @@ class ArticlesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def article_params
       params.require(:article).permit(:title, :key, :body)
+    end
+
+    def set_renderer
+      render_options = {hard_wrap: true, link_attributes: {rel: 'nofollow'}}
+      engine_options = {fenced_code_blocks: true, autolink: true}
+      renderer = RougeHTML.new render_options
+      @markdown = Redcarpet::Markdown.new renderer, engine_options
     end
 end

@@ -4,7 +4,7 @@
   .form-inputs
     = f.input :title
     = f.input :key
-    = f.input :body
+    = f.input :body, input_html: { class: 'markdown-body' }
 
   .form-actions
     = f.button :submit
