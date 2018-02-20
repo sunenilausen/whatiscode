@@ -1,2 +1,9 @@
 %textarea#source.remark-slides
-  = @lecture.body
+  - body = "#{@lecture.body}"
+  - @lecture.articles.each do |article|
+    - body << "\r\n\r\n---\r\n\r\n"
+    - body << "\r\n\r\n###{article.title}"
+    - body << "\r\n\r\n#{article.body}"
+
+
+  = body

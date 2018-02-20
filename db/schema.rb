@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180214143226) do
+ActiveRecord::Schema.define(version: 20180220231229) do
 
   create_table "article_lecture_insertions", force: :cascade do |t|
     t.integer "number"
@@ -25,9 +25,11 @@ ActiveRecord::Schema.define(version: 20180214143226) do
   create_table "articles", force: :cascade do |t|
     t.string "title"
     t.string "key"
-    t.string "body"
+    t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "deleted_at"
+    t.index ["deleted_at"], name: "index_articles_on_deleted_at"
   end
 
   create_table "lectures", force: :cascade do |t|
@@ -37,6 +39,8 @@ ActiveRecord::Schema.define(version: 20180214143226) do
     t.integer "workshop_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "deleted_at"
+    t.index ["deleted_at"], name: "index_lectures_on_deleted_at"
     t.index ["workshop_id"], name: "index_lectures_on_workshop_id"
   end
 
@@ -57,6 +61,8 @@ ActiveRecord::Schema.define(version: 20180214143226) do
     t.boolean "volunteer", default: false
     t.boolean "student", default: false
     t.boolean "admin", default: false
+    t.datetime "deleted_at"
+    t.index ["deleted_at"], name: "index_users_on_deleted_at"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -67,6 +73,8 @@ ActiveRecord::Schema.define(version: 20180214143226) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "deleted_at"
+    t.index ["deleted_at"], name: "index_workshops_on_deleted_at"
   end
 
 end
