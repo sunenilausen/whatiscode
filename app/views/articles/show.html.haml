@@ -1,8 +1,13 @@
-.btn.btn-print Print
-
 %h1  
   = @article.title
 
 = @markdown.render(@article.body).html_safe
 
-= link_to 'Tilbage', @article.workshop
+- if can? :manage, @article
+  .fixed-action-btn.vertical
+    = link_to edit_article_path(@article), class: 'btn-floating btn-large red' do
+      %i.large.material-icons mode_edit
+    %ul
+      %li
+        %a.btn-floating.green.btn-print
+          %i.material-icons insert_drive_file

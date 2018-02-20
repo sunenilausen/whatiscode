@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get '/docs', to: 'articles#docs'
   resources :articles
   resources :lectures do
     member do

@@ -1,0 +1,8 @@
+.row
+  - @articles.each do |article|
+    .card
+      .card-content
+        .card-title= article.title
+        = article.body[0,50]
+      .card-action
+        = link_to 'Gå til Artiklen', article

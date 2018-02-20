@@ -54,6 +54,10 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def docs
+    @articles = Article.all
+  end
+
   # DELETE /articles/1
   # DELETE /articles/1.json
   def destroy

@@ -3,11 +3,11 @@
     .container
       .nav-wrapper
         %a.brand-logo.white-text{:href => "/index"} Carlsberg Pirates
-        -# %a.button-collapse{"data-activates" => "slide-out", :href => "#"}
-          -# %i.material-icons menu
         %ul.right.hide-on-med-and-down#nav-mobile
           %li
             = link_to 'Workshops', workshops_path, class: 'white-text'
+          %li
+            = link_to 'Docs', articles_path, class: 'white-text'
           %li
             - if current_user
               = link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'white-text'
