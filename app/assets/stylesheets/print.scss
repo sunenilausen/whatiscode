@@ -14,4 +14,16 @@
   .fixed-action-btn {
     display: none !important;
   }
+  
+  .no-print {
+    display: none !important;
+  }
+
+  .avoid-page-break {
+    page-break-inside: avoid !important;
+  }
+
+  .page-break {
+    page-break-before: always !important;
+  }
 }
