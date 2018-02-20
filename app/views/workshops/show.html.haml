@@ -11,6 +11,6 @@
     .card
       .card-content
         .card-title= lecture.title
-        Her står noget om denne session
+        = lecture.body[0,50]
       .card-action
         = link_to 'Gå til Lektionen', lecture
