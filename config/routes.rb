@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   get '/docs', to: 'articles#docs'
-  resources :articles
+  resources :articles do
+    member do
+      get 'slides'
+    end
+  end
   resources :lectures do
     member do
       get 'slides'

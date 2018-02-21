@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action :set_article, only: [:show, :edit, :update, :destroy]
+  before_action :set_article, only: [:show, :edit, :update, :destroy, :slides]
   load_and_authorize_resource only: [:new, :create, :update, :destroy]
   before_action :set_renderer, only: [:show]
   layout 'menuless', only: [:slides]
@@ -56,6 +56,9 @@ class ArticlesController < ApplicationController
 
   def docs
     @articles = Article.all
+  end
+
+  def slides
   end
 
   # DELETE /articles/1
