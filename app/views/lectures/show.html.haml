@@ -8,11 +8,11 @@
 = @markdown.render(@lecture.body).html_safe
 
 .page-break
-- @lecture.articles.each do |article|
+- @lecture.article_insertions.each do |article_insertion|
   %hr.no-print
   .avoid-page-break
-    = @markdown.render("###{article.title}").html_safe
-    = @markdown.render(article.body).html_safe
+    = @markdown.render("###{article_insertion.article.title}").html_safe
+    = @markdown.render(article_insertion.article.body).html_safe
 
 - if can? :manage, @lecture
   .fixed-action-btn.vertical
