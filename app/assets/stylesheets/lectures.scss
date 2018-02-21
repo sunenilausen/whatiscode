@@ -19,13 +19,13 @@
 }
 
 .editor-preview-side {
-  z-index: 9999;
+  z-index: 9999 !important;
 }
 
 .editor-toolbar.fullscreen {
-  z-index: 9999;
+  z-index: 9999 !important;
 }
 
 .CodeMirror-fullscreen {
-  z-index: 9999;
+  z-index: 9999 !important;
 }
