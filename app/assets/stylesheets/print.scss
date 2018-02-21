@@ -31,4 +31,26 @@
   .element { overflow: -moz-scrollbars-none  !important; }
   .element::-webkit-scrollbar { width: 0 !important }
   .element { -ms-overflow-style: none !important; }
+
+  code, kbd, pre, samp, p {
+    font-size: 11px !important;
+  }
+
+  h1 {
+    font-size: 40px !important;
+  }
+
+  h2 {
+    font-size: 30px !important;
+  }
+
+  h3 {
+    font-size: 20px !important;
+  }
+
+  h4 {
+    font-size: 15px !important;
+  }
+
+
 }
