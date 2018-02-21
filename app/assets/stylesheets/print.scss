@@ -26,4 +26,9 @@
   .page-break {
     page-break-before: always !important;
   }
+
+  // hide scrollbars
+  .element { overflow: -moz-scrollbars-none; }
+  .element::-webkit-scrollbar { width: 0 !important }
+  .element { -ms-overflow-style: none; }
 }
