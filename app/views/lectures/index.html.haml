@@ -16,7 +16,7 @@
       %tr
         %td= lecture.number
         %td= lecture.title
-        %td= lecture.body
+        %td= lecture.body[0,50]
         %td= lecture.workshop
         %td= link_to 'Show', lecture
         %td= link_to 'Edit', edit_lecture_path(lecture)
