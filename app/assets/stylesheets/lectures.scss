@@ -38,3 +38,22 @@
 .CodeMirror-fullscreen {
   z-index: 9999 !important;
 }
+
+/* Materialize overly specific disable */
+.browser-default > ul > li {
+  list-style-type: disc !important;
+}
+
+.browser-default > ul {
+  list-style-type: disc !important;
+  padding-left: 40px !important;
+}
+
+.editor-preview-side > ul > li {
+  list-style-type: disc !important;
+}
+
+.editor-preview-side > ul {
+  list-style-type: disc !important;
+  padding-left: 40px !important;
+}
