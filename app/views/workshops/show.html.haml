@@ -14,3 +14,8 @@
         = lecture.body[0,50]
       .card-action
         = link_to 'Gå til Lektionen', lecture
+
+- if can? :create, Lecture
+  .fixed-action-btn.vertical
+    = link_to new_lecture_path, class: 'btn-floating btn-large waves-effect waves-light red' do
+      %i.material-icons add
