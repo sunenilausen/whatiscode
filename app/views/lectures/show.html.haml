@@ -1,21 +1,36 @@
-.browser-default
-  %h1  
-    = @lecture.title
-  %h2
-    = @lecture.workshop.title
-    = '#'
-    = @lecture.number
+- content_for :subnav do
+  %li.tab
+    %a{href: "#front"}=@lecture.title
+  - @lecture.article_insertions.each do |article_insertion|
+    %li.tab
+      %a{href: "##{article_insertion.article.key}"}=article_insertion.article.title
 
-  = @markdown.render(@lecture.body).html_safe
+
+.browser-default
+  .section{id: 'front'}
+    %h1  
+      = @lecture.title
+    %h2
+      = @lecture.workshop.title
+      = '#'
+      = @lecture.number
+
+    = @markdown.render(@lecture.body).html_safe
+    %a.btn.waves-effect.waves-light.no-print.next-tab{data: {target: "#{@lecture.article_insertions.first.article.key}"}}
+      Next
 
   .page-break
-  - @lecture.article_insertions.each do |article_insertion|
-    %hr.no-print
-    .avoid-page-break
-      = @markdown.render("###{article_insertion.article.title}").html_safe
-      = @markdown.render(article_insertion.article.body).html_safe
-
-  - if can? :manage, @lecture
+  - @lecture.article_insertions.each.with_index do |article_insertion, index|
+    .section{id: article_insertion.article.key}
+      %hr.no-print
+      .avoid-page-break
+        = @markdown.render("###{article_insertion.article.title}").html_safe
+        = @markdown.render(article_insertion.article.body).html_safe
+      - if index < @lecture.article_insertions.count - 1
+        %a.btn.waves-effect.waves-light.no-print.next-tab{data: {target: "#{@lecture.article_insertions[index + 1].article.key}"}}
+          Next
+  
+  -if can? :manage, Lecture
     .fixed-action-btn.vertical
       = link_to edit_lecture_path(@lecture), class: 'btn-floating btn-large red' do
         %i.large.material-icons mode_edit

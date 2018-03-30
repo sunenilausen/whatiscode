@@ -1,5 +1,5 @@
 .navbar-fixed
-  %nav.red
+  %nav.red.nav-extended
     .container
       .nav-wrapper
         %a.brand-logo.white-text{:href => "/"} Carlsberg Pirates
@@ -13,3 +13,7 @@
               = link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'white-text'
             - else
               = link_to 'Sign in', new_user_session_path, class: 'white-text'
+      - if content_for? :subnav
+        .nav-content
+          %ul.tabs.tabs-transparent
+            = yield :subnav
