@@ -16,8 +16,9 @@
       = @lecture.number
 
     = @markdown.render(@lecture.body).html_safe
-    %a.btn.waves-effect.waves-light.no-print.next-tab{data: {target: "#{@lecture.article_insertions.first.article.key}"}}
-      Next
+    - if @lecture.article_insertions.any?
+      %a.btn.waves-effect.waves-light.no-print.next-tab{data: {target: "#{@lecture.article_insertions.first.article.key}"}}
+        Next
 
   .page-break
   - @lecture.article_insertions.each.with_index do |article_insertion, index|
