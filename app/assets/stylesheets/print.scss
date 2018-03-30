@@ -29,7 +29,7 @@
 
   // hide scrollbars
   .element { overflow: -moz-scrollbars-none  !important; }
-  .element::-webkit-scrollbar { width: 0 !important }
+  .element::-webkit-scrollbar { width: 0 !important; }
   .element { -ms-overflow-style: none !important; }
 
   code, kbd, pre, samp, p {
@@ -52,5 +52,5 @@
     font-size: 15px !important;
   }
 
-
+  .article { display: inline-block !important; }
 }

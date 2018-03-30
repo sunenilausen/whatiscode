@@ -21,7 +21,7 @@
 
   .page-break
   - @lecture.article_insertions.each.with_index do |article_insertion, index|
-    .section{id: article_insertion.article.key}
+    .article{id: article_insertion.article.key}
       %hr.no-print
       .avoid-page-break
         = @markdown.render("###{article_insertion.article.title}").html_safe
@@ -36,7 +36,7 @@
         %i.large.material-icons mode_edit
       %ul
         %li
-          %a.btn-floating.green.btn-print
+          = link_to print_lecture_path(@lecture), class: 'btn-floating green' do
             %i.material-icons insert_drive_file
         %li
           = link_to slides_lecture_path(@lecture), class: 'btn-floating yellow darken-1' do

@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :lectures do
     member do
       get 'slides'
+      get 'print'
     end
   end
   resources :workshops

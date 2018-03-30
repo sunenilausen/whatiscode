@@ -1,0 +1,19 @@
+.browser-default
+  %h1  
+    = @lecture.title
+  %h2
+    = @lecture.workshop.title
+    = '#'
+    = @lecture.number
+
+  = @markdown.render(@lecture.body).html_safe
+
+  .page-break
+  - @lecture.article_insertions.each do |article_insertion|
+    .avoid-page-break
+      = @markdown.render("###{article_insertion.article.title}").html_safe
+      = @markdown.render(article_insertion.article.body).html_safe
+
+  .fixed-action-btn
+    .btn-floating.btn-large.green.btn-print
+      %i.material-icons insert_drive_file

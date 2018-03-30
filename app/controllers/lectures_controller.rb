@@ -1,8 +1,8 @@
 class LecturesController < ApplicationController
   load_and_authorize_resource only: [:new, :create, :update, :destroy]
   before_action :set_lecture, only: [:edit, :update, :destroy]
-  before_action :set_lecture_by_key, only: [:show, :slides]
-  before_action :set_renderer, only: [:show]
+  before_action :set_lecture_by_key, only: [:show, :slides, :print]
+  before_action :set_renderer, only: [:show, :print]
   layout 'menuless', only: [:slides]
 
   # GET /lectures
@@ -67,6 +67,9 @@ class LecturesController < ApplicationController
   end
 
   def slides
+  end
+
+  def print
   end
 
   private
