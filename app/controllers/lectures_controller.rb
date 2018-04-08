@@ -19,7 +19,6 @@ class LecturesController < ApplicationController
   # GET /lectures/new
   def new
     @lecture = Lecture.new
-    # @lecture.article_insertions.build
   end
 
   # GET /lectures/1/edit

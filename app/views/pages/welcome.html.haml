@@ -1,2 +1,12 @@
-.center
-  = link_to 'Web Workshop', @workshop, class: 'btn-large'
+.intro.white-text
+  %h1 Lær at programmere hos Carlsberg Piraterne!
+  %h4 En afdeling af Coding Pirates på UCC i Carlsberg
+  = link_to 'Web Workshop', @workshop, class: 'btn-large btn-pirate-skyblue'
+
+.flex-right
+  .slanted-code
+    .browser-default.card-panel.left-align
+      = @markdown.render(@jsexample).html_safe
+    .right-align
+      %btn#run-js-welcome.btn-large.btn-pirate-skyblue{href: '#'}
+        Kør Koden

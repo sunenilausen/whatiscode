@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #space-invader{
+  overflow: hidden;
   position: absolute;
   left: -5px;
   box-shadow:
@@ -44,11 +45,11 @@
 
   margin: 50px 0 70px 65px;
   transform: rotate(25deg);
+  overflow: hidden;
 }
 
-
-
 #pacman {
+  overflow: hidden;
   position: absolute;
   right: -20px;
   top: 300px;
@@ -63,4 +64,86 @@
   border-bottom-left-radius: 160px;
   border-bottom-right-radius: 160px;
   transform: rotate(-10deg);
+}
+
+.slanted-code {
+  overflow: hidden;
+  // margin-left: 40%;
+  font-size: 16px;
+  transform: rotate(-8deg);
+  width: 42em;
+  .highlight {
+    background-color: white !important;
+  }
+}
+
+.stripes {
+  top: -10px;
+  position: absolute; 
+  width: 100%;
+  height: 100%;
+  transform-origin: 0;
+  overflow: hidden;
+  background: linear-gradient(150deg,$pirate-red 15%,$pirate-orange 70%,$pirate-yellow 94%);
+  transform: skewY(-8deg);
+  z-index: -1;
+  span {
+    height: 190px;
+    position: absolute;
+    &:first-child {
+      width: 33.33333%;
+      left: -16.66666%;
+      top: 0;
+      background: $pirate-red;
+    }
+    &:nth-child(2) {
+      width: 33.33333%;
+      top: 0;
+      left: 16.66666%;
+      background: #E4401E;
+    }
+    &:nth-child(3) {
+      width: 33.33333%;
+      left: 49.99999%;
+      bottom: auto;
+      background: #E4551E;
+    }
+    &:nth-child(4) {
+      width: 33.33333%;
+      top: 380px;
+      right: -16.66666%;
+      background: $pirate-orange;
+    }
+    &:nth-child(5) {
+      width: 33.33333%;
+      bottom: 0;
+      background: #ED7824;
+    }
+  }
+}
+
+header {
+  position: relative;
+  width: 100%;
+}
+
+.front-page {
+  overflow: hidden;
+  nav {
+    background-color: transparent !important;
+    box-shadow: none;
+  }
+  .navbar-fixed {
+    position: absolute;
+  }
+  #pacman {
+    top: 700px;
+  }
+  #space-invader {
+    top: 750px;
+  }
+}
+
+.intro {
+  padding-top: 14%;
 }
