@@ -1,0 +1,9 @@
+.pirate-skyblue-text {
+  color: $pirate-skyblue !important;
+  &:hover {
+    color: $pirate-skyblue-light !important;
+  }
+  &:active {
+    color: $pirate-skyblue-dark !important;
+  }
+}

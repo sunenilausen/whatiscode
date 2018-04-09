@@ -17,7 +17,7 @@
 
     = @markdown.render(@lecture.body).html_safe
     - if @lecture.article_insertions.any?
-      %a.btn.waves-effect.waves-light.no-print.next-tab{data: {target: "#{@lecture.article_insertions.first.article.key}"}}
+      %a.btn.btn-pirate-skyblue.waves-effect.waves-light.no-print.next-tab{data: {target: "#{@lecture.article_insertions.first.article.key}"}}
         Next
 
   .page-break
@@ -28,7 +28,7 @@
         = @markdown.render("###{article_insertion.article.title}").html_safe
         = @markdown.render(article_insertion.article.body).html_safe
       - if index < @lecture.article_insertions.count - 1
-        %a.btn.waves-effect.waves-light.no-print.next-tab{data: {target: "#{@lecture.article_insertions[index + 1].article.key}"}}
+        %a.btn.btn-pirate-skyblue.waves-effect.waves-light.no-print.next-tab{data: {target: "#{@lecture.article_insertions[index + 1].article.key}"}}
           Next
   
   -if can? :manage, Lecture

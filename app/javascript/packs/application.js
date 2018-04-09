@@ -12,3 +12,4 @@ import "./markdown-initializer";
 import "./slides-initializer";
 import './print';
 import './welcome';
+import './waves-effect';

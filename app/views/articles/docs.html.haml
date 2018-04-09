@@ -5,7 +5,7 @@
         .card-title= article.title
         = article.body[0,50]
       .card-action
-        = link_to 'Gå til Artiklen', article
+        = link_to 'Gå til Artiklen', article, class: 'btn btn-pirate-skyblue waves-effect waves-light'
 
 - if can? :create, Article
   .fixed-action-btn.vertical

@@ -4,12 +4,12 @@
 
 - if can? :manage, @article
   .fixed-action-btn.vertical
-    = link_to edit_article_path(@article), class: 'btn-floating btn-large btn-pirate-red' do
+    = link_to edit_article_path(@article), class: 'btn-floating btn-large btn-pirate-red waves-effect waves-light' do
       %i.large.material-icons mode_edit
     %ul
       %li
-        %a.btn-floating.green.btn-print
+        %a.btn-floating.green.btn-print.waves-effect.waves-light
           %i.material-icons insert_drive_file
       %li
-        = link_to slides_article_path(@article), class: 'btn-floating yellow darken-1' do
+        = link_to slides_article_path(@article), class: 'btn-floating yellow darken-1 waves-effect waves-light' do
           %i.material-icons slideshow

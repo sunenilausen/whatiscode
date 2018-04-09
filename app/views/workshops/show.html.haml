@@ -13,7 +13,7 @@
         .card-title= lecture.title
         = lecture.body[0,50]
       .card-action
-        = link_to 'Gå til Lektionen', lecture
+        = link_to 'Gå til Lektionen', lecture, class: 'btn btn-pirate-skyblue waves-effect waves-light'
 
 - if can? :create, Lecture
   .fixed-action-btn.vertical
