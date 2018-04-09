@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #space-invader{
+  z-index: -1;
   overflow: hidden;
   position: absolute;
   left: -5px;
@@ -49,6 +50,7 @@
 }
 
 #pacman {
+  z-index: -1;
   overflow: hidden;
   position: absolute;
   right: -20px;
