@@ -2,7 +2,6 @@ class PagesController < ApplicationController
   layout 'frontpage'
 
   def welcome
-    @workshop = Workshop.first
     @jsexample ="\n ```javascript \nif (confirm('Vil du lære JavaScript?')) { \n  window.location.href = 'http://carlsbergpirates.dk/javascript'\n} else {\n  window.location.href = 'http://carlsbergpirates.dk/workshops'\n}\n```"
     set_renderer
   end
