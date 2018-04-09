@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180220231229) do
+ActiveRecord::Schema.define(version: 20180409204902) do
 
   create_table "article_lecture_insertions", force: :cascade do |t|
     t.integer "number"
@@ -74,6 +74,7 @@ ActiveRecord::Schema.define(version: 20180220231229) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.datetime "deleted_at"
+    t.string "image"
     t.index ["deleted_at"], name: "index_workshops_on_deleted_at"
   end
 

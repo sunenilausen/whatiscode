@@ -1,25 +1,21 @@
-%h1 Listing workshops
+%h1 Workshops
 
-%table
-  %thead
-    %tr
-      %th Title
-      %th Description
-      %th key
-      %th
-      %th
-      %th
+- @workshops.each do |workshop|
+  .card.horizontal
+    .card-image
+      %img.workshop-card-image{:src => workshop.image}/
+    .card-stacked
+      .card-content
+        %span.card-title= workshop.title
+        %p= workshop.description
+        %i= workshop.key
+      .card-action
+        = link_to 'Kom i gang', workshop
+        - if can? :manage, Workshop
+          = link_to 'Edit', edit_workshop_path(workshop)
+          = link_to 'Destroy', workshop, method: :delete, data: { confirm: 'Are you sure?' }
 
-  %tbody
-    - @workshops.each do |workshop|
-      %tr
-        %td= workshop.title
-        %td= workshop.description
-        %td= workshop.key
-        %td= link_to 'Show', workshop
-        %td= link_to 'Edit', edit_workshop_path(workshop)
-        %td= link_to 'Destroy', workshop, method: :delete, data: { confirm: 'Are you sure?' }
-
-%br
-
-= link_to 'New Workshop', new_workshop_path
+- if can? :manage, Workshop
+  .fixed-action-btn.vertical
+    = link_to new_workshop_path, class: 'btn-floating btn-large waves-effect waves-light red' do
+      %i.material-icons add
