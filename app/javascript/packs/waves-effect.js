@@ -1,3 +1,3 @@
-$(document).on('ready page:change turbolinks:load', function() {
+$(document).on('turbolinks:load', function() {
   Waves.displayEffect();
 });

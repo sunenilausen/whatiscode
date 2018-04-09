@@ -1,6 +1,6 @@
 import SimpleMDE from "simplemde";
 
-$(document).on('ready page:change turbolinks:load', function(e) {
+$(document).on('turbolinks:load', function(e) {
   const editors = document.getElementsByClassName("markdown-editor")
   if (editors.length == 0)
     return
