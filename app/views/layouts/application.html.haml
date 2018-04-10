@@ -23,5 +23,5 @@
   %p.alert= alert
   #space-invader
   #pacman
-  %div{ class: "container white full-height #{'subnav' if content_for? :subnav}"}
+  %div{ class: "container main-container white #{'subnav' if content_for? :subnav}"}
     = yield
