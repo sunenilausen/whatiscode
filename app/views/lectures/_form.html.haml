@@ -9,8 +9,10 @@
     #article_insertions
       = f.simple_fields_for :article_insertions do |article_form|
         = render 'article_insertion_fields', f: article_form
+      .small-br
       .links
         = link_to_add_association 'Indsæt Ny Artikel', f, :article_insertions, class: 'waves-effect waves-light btn green'
+      .small-br
 
   .form-actions
     = f.button :submit

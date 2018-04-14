@@ -11,9 +11,9 @@
         %i= workshop.key
       .card-action
         = link_to 'Kom i gang', workshop, class: 'btn btn-pirate-skyblue waves-effect waves-light'
-        - if can? :manage, Workshop
-          = link_to 'Edit', edit_workshop_path(workshop)
-          = link_to 'Destroy', workshop, method: :delete, data: { confirm: 'Are you sure?' }
+        - if can? :manage, workshop
+          = link_to 'Rediger', edit_workshop_path(workshop), class: 'btn btn-pirate-orange waves-effect waves-light'
+          = link_to 'Slet', workshop, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-pirate-red waves-effect waves-light'
 
 - if can? :manage, Workshop
   .fixed-action-btn.vertical

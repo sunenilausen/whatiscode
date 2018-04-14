@@ -14,6 +14,9 @@
         = lecture.body[0,50]
       .card-action
         = link_to 'Gå til Lektionen', lecture, class: 'btn btn-pirate-skyblue waves-effect waves-light'
+        - if can? :manage, lecture
+          = link_to 'Rediger', edit_lecture_path(lecture), class: 'btn btn-pirate-orange waves-effect waves-light'
+          = link_to 'Slet', lecture, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-pirate-red waves-effect waves-light'
 
 - if can? :create, Lecture
   .fixed-action-btn.vertical

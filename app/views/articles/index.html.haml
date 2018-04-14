@@ -1,25 +1,16 @@
-%h1 Listing articles
+.row
+  - @articles.each do |article|
+    .card
+      .card-content
+        .card-title= article.title
+        = article.body[0,50]
+      .card-action
+        = link_to 'Gå til Artiklen', article, class: 'btn btn-pirate-skyblue waves-effect waves-light'
+        - if can? :manage, article
+          = link_to 'Rediger', edit_article_path(article), class: 'btn btn-pirate-orange waves-effect waves-light'
+          = link_to 'Slet', article, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-pirate-red waves-effect waves-light'
 
-%table
-  %thead
-    %tr
-      %th Title
-      %th Key
-      %th Body
-      %th
-      %th
-      %th
-
-  %tbody
-    - @articles.each do |article|
-      %tr
-        %td= article.title
-        %td= article.key
-        %td= article.body[0,50]
-        %td= link_to 'Show', article
-        %td= link_to 'Edit', edit_article_path(article)
-        %td= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' }
-
-%br
-
-= link_to 'New Article', new_article_path
+- if can? :create, Article
+  .fixed-action-btn.vertical
+    = link_to new_article_path, class: 'btn-floating btn-large waves-effect waves-light red' do
+      %i.material-icons add

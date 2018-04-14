@@ -1,3 +1,10 @@
+.btn {
+  background-color: $pirate-skyblue;
+  &:hover {
+    background-color: $pirate-skyblue-light;
+  }
+}
+
 .btn-pirate-skyblue {
   background-color: $pirate-skyblue;
   &:hover {
@@ -12,9 +19,9 @@
   }
 }
 
-// .btn-pirate-orange {
-//   background-color: $pirate-orange;
-//   &:hover {
-//     background-color: $pirate-orange-light;
-//   }
-// }
+.btn-pirate-orange {
+  background-color: $pirate-orange;
+  &:hover {
+    background-color: $pirate-orange-light;
+  }
+}

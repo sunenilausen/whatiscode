@@ -54,10 +54,6 @@ class ArticlesController < ApplicationController
     end
   end
 
-  def docs
-    @articles = Article.all
-  end
-
   def slides
   end
 
