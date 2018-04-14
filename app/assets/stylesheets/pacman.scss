@@ -1,0 +1,18 @@
+#pacman {
+  z-index: -1;
+  overflow: hidden;
+  position: absolute;
+  right: -320px;
+  top: 300px;
+  width: 0px;
+  height: 0px;
+  border-right: 160px solid #FFFFA0;
+  border-top: 160px solid #FFFFA0;
+  border-left: 160px solid transparent;
+  border-bottom: 160px solid #FFFFA0;
+  border-top-left-radius: 160px;
+  border-top-right-radius: 160px;
+  border-bottom-left-radius: 160px;
+  border-bottom-right-radius: 160px;
+  transform: rotate(-10deg);
+}

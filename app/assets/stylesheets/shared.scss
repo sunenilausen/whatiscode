@@ -3,10 +3,6 @@
   justify-content: flex-end;
 }
 
-.pirate-red {
-  background-color: $pirate-red;
-}
-
 body {
   overflow-x: hidden;
 }
@@ -15,13 +11,6 @@ body {
  &.subnav {
     padding-top: 48px;
   }
-}
-
-.main-container{
-  height: 100vh;
-  width: 80%;
-  padding-left: 5%;
-  padding-right: 5%;
 }
 
 .accent-header {
@@ -42,4 +31,8 @@ body {
 .small-br {
   padding: 0.2em;
   width: 100%;
+}
+
+.background-container {
+  position: relative;
 }
