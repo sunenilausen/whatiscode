@@ -1,0 +1,33 @@
+.alert {
+    @extend .card-panel;
+    margin-top: 0;
+    border-radius: 0;
+
+    &.alert-success {
+        @extend .green, .white-text;
+    }
+
+    &.alert-info {
+        @extend .pirate-skyblue-bg, .white-text;
+    }
+
+    &.alert-notice {
+        @extend .pirate-skyblue-bg, .white-text;
+    }
+
+    &.alert-warning {
+        @extend .pirate-orange-bg, .white-text;
+    }
+
+    &.alert-danger {
+        @extend .pirate-red-bg, .white-text;
+    }
+
+    .close {
+        position: absolute;
+        top: 50%;
+        right: 0.5rem;
+        color: inherit;
+        margin-top: -18px;
+    }
+}

@@ -19,8 +19,7 @@
     %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
 %body
   = render 'shared/menu'
-  %p.notice= notice
-  %p.alert= alert
+  = render 'shared/flash'
   #space-invader
   #pacman
   %div{ class: "container main-container white #{'subnav' if content_for? :subnav}"}
