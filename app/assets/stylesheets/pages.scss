@@ -70,7 +70,6 @@
 
 .slanted-code {
   overflow: hidden;
-  // margin-left: 40%;
   font-size: 16px;
   transform: rotate(-8deg);
   width: 42em;
@@ -130,7 +129,6 @@ header {
 }
 
 .front-page {
-  overflow: hidden;
   nav {
     background-color: transparent !important;
     box-shadow: none;
@@ -148,4 +146,26 @@ header {
 
 .intro {
   padding-top: 14%;
+}
+
+.flyt-musen-her {
+  padding: 24px;
+  border-radius: 2px;
+  width: 70%;
+  background-color: white;
+  box-shadow: 0px 2px 6px 0px rgba(0,0,0,0.4);
+}
+.flyt-musen-her:hover {
+  transition: 3s;
+  margin-left: 30%;
+}
+
+.flyt-musen-her {
+  margin: 0.5rem 0 1rem 0;
+}
+
+.flyt-musen-her {
+  .highlight {
+    background-color: white;
+  }
 }
