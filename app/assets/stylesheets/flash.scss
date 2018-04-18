@@ -1,27 +1,32 @@
-.alert {
+.flash {
     @extend .card-panel;
     margin-top: 0;
     border-radius: 0;
 
-    &.alert-success {
+    &.flash-success {
         @extend .green, .white-text;
     }
 
-    &.alert-info {
+    &.flash-info {
         @extend .pirate-skyblue-bg, .white-text;
     }
 
-    &.alert-notice {
+    &.flash-notice {
         @extend .pirate-skyblue-bg, .white-text;
     }
-
-    &.alert-warning {
+    
+    &.flash-warning {
         @extend .pirate-orange-bg, .white-text;
     }
 
-    &.alert-danger {
+    &.flash-danger {
         @extend .pirate-red-bg, .white-text;
     }
+
+    &.flash-alert {
+        @extend .pirate-red-bg, .white-text;
+    }
+
 
     .close {
         margin-top: -0.5em;
