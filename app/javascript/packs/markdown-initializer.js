@@ -2,16 +2,18 @@ import SimpleMDE from "simplemde";
 
 $(document).on('turbolinks:load', function(e) {
   const editors = document.getElementsByClassName("markdown-editor")
-  if (editors.length == 0)
-    return
   
+  Array.prototype.forEach.call(editors, initEditor);
+
+
+function initEditor(element) {
   const simplemde = new SimpleMDE({
     autofocus: true,
     blockStyles: {
       bold: '__',
       italic: '_'
     },
-    element: editors[0],
+    element: element,
     forceSync: true,
     indentWithTabs: false,
     insertTexts: {
@@ -56,4 +58,6 @@ $(document).on('turbolinks:load', function(e) {
     styleSelectedText: false,
     tabSize: 4
   });
+}
+
 });

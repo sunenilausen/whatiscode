@@ -5,6 +5,8 @@
     = f.input :title
     = f.input :key
     = f.input :body, input_html: { class: 'markdown-editor' }
+    = f.input :preview, input_html: { class: 'markdown-editor' }
+    = f.input :preview_image_url
 
   .form-actions
     = f.button :submit
