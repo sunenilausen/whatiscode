@@ -8,15 +8,18 @@
   %b Lektioner:
 .row
   - @workshop.lectures.each do |lecture|
-    .card
-      .card-content
-        .card-title= lecture.title
-        = lecture.body[0,50]
-      .card-action
-        = link_to 'Gå til Lektionen', lecture, class: 'btn btn-pirate-skyblue waves-effect waves-light'
-        - if can? :manage, lecture
-          = link_to 'Rediger', edit_lecture_path(lecture), class: 'btn btn-pirate-orange waves-effect waves-light'
-          = link_to 'Slet', lecture, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-pirate-red waves-effect waves-light'
+    .card.horizontal.workshop-card
+      .card-image
+        %img.workshop-card-image{src: lecture.preview_image_url}
+      .card-stacked
+        .card-content.preview-highlight
+          %span.card-title= lecture.title
+          = @markdown.render(lecture.preview).html_safe
+        .card-action
+          = link_to 'Gå til Lektionen', lecture, class: 'btn btn-pirate-skyblue waves-effect waves-light'
+          - if can? :manage, lecture
+            = link_to 'Rediger', edit_lecture_path(lecture), class: 'btn btn-pirate-orange waves-effect waves-light'
+            = link_to 'Slet', lecture, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-pirate-red waves-effect waves-light'
 
 - if can? :create, Lecture
   .fixed-action-btn.vertical

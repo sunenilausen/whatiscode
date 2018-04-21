@@ -10,8 +10,13 @@ class Lecture < ApplicationRecord
   validates :title, presence: true
   validates :number, presence: true
 
-  def preview_image
-    return preview_image_url if preview_image_url
-    return workshop.image
+  def preview_image_url
+    return self[:preview_image_url] if self[:preview_image_url]
+    workshop.image_url
+  end
+
+  def preview
+    return self[:preview] if self[:preview]
+    body[0,255]
   end
 end

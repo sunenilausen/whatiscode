@@ -5,12 +5,6 @@ class LecturesController < ApplicationController
   before_action :set_renderer, only: [:show, :print]
   layout 'menuless', only: [:slides]
 
-  # GET /lectures
-  # GET /lectures.json
-  def index
-    @lectures = Lecture.all
-  end
-
   # GET /lectures/1
   # GET /lectures/1.json
   def show

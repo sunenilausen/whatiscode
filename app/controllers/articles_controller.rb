@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy, :slides]
   load_and_authorize_resource only: [:new, :create, :update, :destroy]
-  before_action :set_renderer, only: [:show]
+  before_action :set_renderer, only: [:show, :index]
   layout 'menuless', only: [:slides]
 
   # GET /articles

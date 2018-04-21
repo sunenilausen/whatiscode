@@ -1,14 +1,17 @@
 .row
   - @articles.each do |article|
-    .card
-      .card-content
-        .card-title= article.title
-        = article.body[0,50]
-      .card-action
-        = link_to 'Gå til Artiklen', article, class: 'btn btn-pirate-skyblue waves-effect waves-light'
-        - if can? :manage, article
-          = link_to 'Rediger', edit_article_path(article), class: 'btn btn-pirate-orange waves-effect waves-light'
-          = link_to 'Slet', article, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-pirate-red waves-effect waves-light'
+    .col.s12.m6.l4
+      .card.medium
+        .card-image
+          .article-card-image{style: "background-image: url('#{article.preview_image_url}')"}
+        .card-content.preview-highlight
+          %span.card-title= article.title
+          = @markdown.render(article.preview).html_safe
+        .card-action
+          = link_to 'Gå til Artiklen', article, class: 'pirate-skyblue-text'
+          - if can? :manage, article
+            = link_to 'Rediger', edit_article_path(article), class: 'pirate-orange-text'
+            = link_to 'Slet', article, method: :delete, data: { confirm: 'Are you sure?' }, class: 'pirate-red-text'
 
 - if can? :create, Article
   .fixed-action-btn.vertical

@@ -7,13 +7,14 @@ class Article < ApplicationRecord
   validates :title, presence: true
   validates :key, presence: true, uniqueness: true
 
-  def preview_image
-    return preview_image_url if preview_image_url
-    return category.image_url if category&.image_url
-    return default_image_url
+  def preview_image_url
+    return self[:preview_image_url] if self[:preview_image_url]
+    category.image_url if category
+    ActionController::Base.helpers.image_url "hack-logo.png"
   end
 
-  def default_image_url
-
+  def preview
+    return self[:preview] if self[:preview]
+    body[0,255]
   end
 end

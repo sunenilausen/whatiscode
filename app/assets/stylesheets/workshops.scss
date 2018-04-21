@@ -2,7 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.workshop-card-image {
-  max-height: 200px;
-  padding: 10px;
+.workshop-card {
+  max-height: 220px;
+  img {
+    max-height: 200px;
+    padding: 10px;
+  }
+  .card-content {
+    max-height: 150px;
+    overflow: hidden;
+  }
 }

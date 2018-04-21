@@ -7,3 +7,23 @@
     color: $pirate-skyblue-dark !important;
   }
 }
+
+.pirate-orange-text {
+  color: $pirate-orange !important;
+  &:hover {
+    color: $pirate-orange-light !important;
+  }
+  &:active {
+    color: $pirate-orange-dark !important;
+  }
+}
+
+.pirate-red-text {
+  color: $pirate-red !important;
+  &:hover {
+    color: $pirate-red-light !important;
+  }
+  &:active {
+    color: $pirate-red-dark !important;
+  }
+}

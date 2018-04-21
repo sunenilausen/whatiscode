@@ -1,9 +1,9 @@
 %h1 Workshops
 
 - @workshops.each do |workshop|
-  .card.horizontal
+  .card.horizontal.workshop-card
     .card-image
-      %img.workshop-card-image{:src => workshop.image}/
+      %img{src: workshop.image_url}
     .card-stacked
       .card-content
         %span.card-title= workshop.title
