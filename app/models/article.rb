@@ -9,7 +9,7 @@ class Article < ApplicationRecord
 
   def preview_image_url
     return self[:preview_image_url] if self[:preview_image_url]
-    category.image_url if category
+    return category.image_url if category
     ActionController::Base.helpers.image_url "hack-logo.png"
   end
 
