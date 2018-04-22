@@ -10,7 +10,7 @@
   - @workshop.lectures.each do |lecture|
     .card.horizontal.workshop-card
       .card-image
-        %img.workshop-card-image{src: lecture.preview_image_url}
+        %img.workshop-card-image{src: lecture.preview_image}
       .card-stacked
         .card-content.preview-highlight
           %span.card-title= lecture.title
@@ -25,3 +25,8 @@
   .fixed-action-btn.vertical
     = link_to new_lecture_path, class: 'btn-floating btn-large waves-effect waves-light btn-pirate-red' do
       %i.material-icons add
+    -if can? :edit, @workshop
+      %ul
+        %li
+          = link_to edit_workshop_path(@workshop), class: 'btn-floating btn-pirate-orange waves-effect waves-light' do
+            %i.material-icons mode_edit

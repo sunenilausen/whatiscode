@@ -3,7 +3,7 @@
     .col.s12.m6.l4
       .card.medium
         .card-image
-          .article-card-image{style: "background-image: url('#{article.preview_image_url}')"}
+          .article-card-image{style: "background-image: url('#{article.preview_image}')"}
         .card-content.preview-highlight
           %span.card-title= article.title
           = @markdown.render(article.preview).html_safe

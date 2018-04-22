@@ -3,8 +3,8 @@ class Category < ApplicationRecord
 
   validates :title, presence: true
 
-  def image_url
-    return self[:image_url] if self[:image_url]
+  def image
+    return image_url if image_url
     ActionController::Base.helpers.image_url "hack-logo.png"
   end
 end
