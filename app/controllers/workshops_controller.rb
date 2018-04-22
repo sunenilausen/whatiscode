@@ -1,15 +1,10 @@
 class WorkshopsController < ApplicationController
   load_and_authorize_resource
-  skip_authorize_resource only: [:show, :index, :web]
+  skip_authorize_resource only: [:show, :index]
 
   before_action :set_workshop, only: [:edit, :update, :destroy]
 
   before_action :set_renderer, only: [:show]
-
-  def web
-    @workshop = Workshop.find_by(key: 'web')
-    render :show
-  end
 
   # GET /workshops
   # GET /workshops.json
@@ -24,6 +19,10 @@ class WorkshopsController < ApplicationController
       @workshop = Workshop.find_by(key: params[:workshop])
     else
       @workshop = Workshop.find(params[:id])
+    end
+    unless @workshop
+      flash[:warning] = params[:workshop] + " does not exist"
+      redirect_to root_path
     end
   end
 

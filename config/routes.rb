@@ -6,7 +6,7 @@ Rails.application.routes.draw do
       get 'slides'
     end
   end
-  resources :lectures do
+  resources :lectures, except: :index do
     member do
       get 'slides'
       get 'print'
