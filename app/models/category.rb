@@ -4,7 +4,7 @@ class Category < ApplicationRecord
   validates :title, presence: true
 
   def image
-    return image_url if image_url
+    return image_url if image_url.present?
     ActionController::Base.helpers.image_url "hack-logo.png"
   end
 end
