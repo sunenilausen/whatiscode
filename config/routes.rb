@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  devise_for :users
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  
   get '/docs', to: 'articles#index'
   
   resources :articles do
@@ -13,8 +16,6 @@ Rails.application.routes.draw do
     end
   end
   resources :workshops
-  devise_for :users
-  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   get '/:workshop', to: 'workshops#show'
   get '/:workshop/:lecture', to: 'lectures#show'
   get '/:workshop/:lecture/slides', to: 'lectures#slides'
