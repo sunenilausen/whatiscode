@@ -1,18 +1,19 @@
 .row
   - @articles.each do |article|
     .col.s12.m6.l6.xl4
-      .card.medium
+      .card.article-card
         .card-image
-          %img.center.article-card-image{src: article.preview_image}
+          = link_to article, class: "article-card-image" do
+            %img.center{src: article.preview_image}
+            .hover-content.preview-highlight
+              = @markdown.render(article.preview).html_safe
         .card-content.preview-highlight
           %span.card-title= article.title
-          = @markdown.render(article.preview).html_safe
-        .card-action
-          = link_to 'Gå til Artiklen', article, class: 'pirate-skyblue-text'
+          = @markdown.render(article.preview_code).html_safe
           - if can? :manage, article
-            = link_to 'Rediger', edit_article_path(article), class: 'pirate-orange-text'
-            = link_to 'Slet', article, method: :delete, data: { confirm: 'Are you sure?' }, class: 'pirate-red-text'
-
+            = link_to edit_article_path(article), class: "btn-floating halfway-fab waves-effect waves-light btn-pirate-orange" do
+              %i.material-icons mode_edit
+       
 - if can? :create, Article
   .fixed-action-btn.vertical
     = link_to new_article_path, class: 'btn-floating btn-large waves-effect waves-light red' do

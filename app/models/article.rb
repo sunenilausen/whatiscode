@@ -8,6 +8,7 @@ class Article < ApplicationRecord
   validates :title, presence: true
   validates :key, presence: true, uniqueness: true
 
+
   def preview_image
     return preview_image_url if preview_image_url.present?
     return category.image if category.present?
@@ -17,5 +18,10 @@ class Article < ApplicationRecord
   def preview
     return self[:preview] if self[:preview]
     body[0,255]
+  end
+
+  def preview_code
+    return "" if self[:preview_code].nil?
+    self[:preview_code]
   end
 end
