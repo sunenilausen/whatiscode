@@ -7,12 +7,12 @@
             %img.center{src: article.preview_image}
             .hover-content.preview-highlight
               = @markdown.render(article.preview).html_safe
-        .card-content.preview-highlight
-          %span.card-title= article.title
-          = @markdown.render(article.preview_code).html_safe
           - if can? :manage, article
             = link_to edit_article_path(article), class: "btn-floating halfway-fab waves-effect waves-light btn-pirate-orange" do
               %i.material-icons mode_edit
+        .card-content.preview-highlight
+          %span.card-title= article.title
+          = @markdown.render(article.preview_code).html_safe
        
 - if can? :create, Article
   .fixed-action-btn.vertical
