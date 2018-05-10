@@ -5,9 +5,9 @@
 * POSTGRESQL
 
 ## Configuration
-	  gem install bundler
-    bundle install
-    rails db:migrate
+	gem install bundler
+	bundle install
+	rails db:migrate
 
 ## Start
     rails s
