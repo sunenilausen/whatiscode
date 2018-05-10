@@ -1,24 +1,21 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## System dependencies
+* [Ruby](https://www.ruby-lang.org/en/) 2.4.1
+* POSTGRESQL
 
-Things you may want to cover:
+## Configuration
+	  gem install bundler
+    bundle install
+    rails db:migrate
 
-* Ruby version
+## Start
+    rails s
 
-* System dependencies
+## Test suite
+    m
 
-* Configuration
+## Deployment
+I recommend using heroku
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+    git push heroku master
