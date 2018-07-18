@@ -9,6 +9,7 @@ class WorkshopsController < ApplicationController
   # GET /workshops
   # GET /workshops.json
   def index
+    render layout: 'shrinkable'
     @workshops = Workshop.all
   end
 

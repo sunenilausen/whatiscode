@@ -1,0 +1,128 @@
+$headerHeight: 250px;
+$toolbarHeight: 64px;
+
+.shrinkable {
+  padding-top: 210px;
+}
+
+.shrink-app-header {
+  display: block;
+  // background: #3f51b5;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: #fff;
+  height: $headerHeight;
+  // box-shadow: 0 2px 5px rgba(0,0,0,0);
+}
+
+.shrink-header-content {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.shrink-app-toolbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  height: $toolbarHeight;  
+  padding: 0 16px;
+  // pointer-events: none;
+  font-size: 20px;
+}
+
+#shrink-large-toolbar {
+  position: absolute;
+  bottom: 0;    
+  transform-origin: left top;  
+  margin-bottom: 24px;
+  margin-bottom: 16px;
+  width: 100%;
+}
+
+.shrink-small-title,
+.shrink-large-title {
+  transform-origin: left top;
+  white-space: nowrap;  
+  // flex: 1;
+  // flex-basis: 0.000000001px;
+  overflow: hidden;  
+  font-weight: 400;
+  line-height: 1.5;  
+  position: relative;
+}
+
+.shrink-small-title {
+  // margin-left: 14px;  
+  // visibility: hidden;
+  opacity: 0;
+}
+
+.shrink-large-title {
+  will-change: transform, opacity;
+  font-size: 56px;
+  font-size: 2em;
+  // margin-left: 64px;
+}
+
+// .icon-button {
+//   display: inline-block;
+//   position: relative;  
+//   padding: 6px;  
+//   outline: none;
+//   user-select: none;
+//   font-size: 0;
+//   line-height: 1;
+//   width: 40px;
+//   height: 40px;
+//   box-sizing: border-box !important;
+  
+//   .icon {
+//     display: inline-flex;
+//     align-items: center;
+//     justify-content: center;
+//     position: relative;
+//     vertical-align: middle;
+//     fill: currentcolor;
+//     stroke: none;
+//     width: 100%;
+//     height: 100%;
+//   }
+// }
+
+.shrink-background-container {
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.shrink-background {
+  pointer-events: none;
+  position: absolute;
+  background-size: cover;
+  height: 100%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  will-change: transform, opacity;
+}
+
+#shrink-background-back {
+  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/106114/mountain-02.jpg);
+  background-position: left center;
+  opacity: 0;
+  // visibility: hidden;
+}
+
+#shrink-background-front {
+  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/106114/mountain-01.jpg);
+  background-position: left center;
+}

@@ -17,7 +17,7 @@ class Article < ApplicationRecord
 
   def preview
     return self[:preview] if self[:preview]
-    body[0,255]
+    body
   end
 
   def preview_code

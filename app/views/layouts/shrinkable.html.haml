@@ -1,0 +1,138 @@
+!!!
+%html
+  %head
+    %title Carlsberg Pirates
+    = csrf_meta_tags
+
+    %script{src: "https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js", type: "text/javascript"}
+
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag 'application'
+    = #stylesheet_pack_tag 'application'
+  
+    / Import Google Icon Font
+    %link{:href => "https://fonts.googleapis.com/icon?family=Material+Icons", :rel => "stylesheet"}/
+
+    / Material Design fonts
+    %link{:href => "//fonts.googleapis.com/css?family=Roboto:300,400,500,700", :rel => "stylesheet", :type => "text/css"}/
+
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
+%body.shrinkable
+  .navbar-fixed
+    %nav.pirate-red-bg.nav-extended
+      #shrink-app-header.shrink-app-header
+        .container.height-100
+          .shrink-background-container
+            #shrink-background-back.shrink-background
+            #shrink-background-front.shrink-background
+          .shrink-header-content
+            #shrink-small-toolbar.shrink-app-toolbar
+              #shrink-small-title.shrink-small-title
+                = yield :title
+              %a{:href => "/"} Carlsberg Pirates
+              %ul.right
+                %li
+                  = link_to 'Workshops', workshops_path, class: 'white-text'
+                %li
+                  = link_to 'Docs', "/docs", class: 'white-text'
+                %li
+                  - if current_user
+                    = link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'white-text'
+                  - else
+                    = link_to 'Sign in', new_user_session_path, class: 'white-text'
+            #shrink-large-toolbar.shrink-app-toolbar.shrink-tall
+              #shrink-large-title.shrink-large-title 
+                = yield :title
+
+  .container
+    = yield
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  %br
+  
