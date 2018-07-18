@@ -7,14 +7,12 @@ $toolbarHeight: 64px;
 
 .shrink-app-header {
   display: block;
-  // background: #3f51b5;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   color: #fff;
   height: $headerHeight;
-  // box-shadow: 0 2px 5px rgba(0,0,0,0);
 }
 
 .shrink-header-content {
@@ -48,8 +46,6 @@ $toolbarHeight: 64px;
 .shrink-large-title {
   transform-origin: left top;
   white-space: nowrap;  
-  // flex: 1;
-  // flex-basis: 0.000000001px;
   overflow: hidden;  
   font-weight: 400;
   line-height: 1.5;  
@@ -57,8 +53,6 @@ $toolbarHeight: 64px;
 }
 
 .shrink-small-title {
-  // margin-left: 14px;  
-  // visibility: hidden;
   opacity: 0;
 }
 
@@ -66,33 +60,7 @@ $toolbarHeight: 64px;
   will-change: transform, opacity;
   font-size: 56px;
   font-size: 2em;
-  // margin-left: 64px;
 }
-
-// .icon-button {
-//   display: inline-block;
-//   position: relative;  
-//   padding: 6px;  
-//   outline: none;
-//   user-select: none;
-//   font-size: 0;
-//   line-height: 1;
-//   width: 40px;
-//   height: 40px;
-//   box-sizing: border-box !important;
-  
-//   .icon {
-//     display: inline-flex;
-//     align-items: center;
-//     justify-content: center;
-//     position: relative;
-//     vertical-align: middle;
-//     fill: currentcolor;
-//     stroke: none;
-//     width: 100%;
-//     height: 100%;
-//   }
-// }
 
 .shrink-background-container {
   position: absolute;
@@ -116,13 +84,46 @@ $toolbarHeight: 64px;
 }
 
 #shrink-background-back {
-  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/106114/mountain-02.jpg);
-  background-position: left center;
+  background: linear-gradient(150deg,$pirate-red 15%,$pirate-orange 70%,$pirate-yellow 94%);
   opacity: 0;
-  // visibility: hidden;
 }
 
 #shrink-background-front {
-  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/106114/mountain-01.jpg);
-  background-position: left center;
+  position: absolute; 
+  width: 100%;
+  height: 100%;
+  transform-origin: 0;
+  overflow: hidden;
+  background: linear-gradient(150deg,$pirate-red 15%,$pirate-orange 70%,$pirate-yellow 94%);
+  z-index: -1;
+  span {
+    height: 180px;
+    position: absolute;
+    width: 100%;
+    &:first-child {
+      transform: skewY(-8deg);
+      left: -16.66666%;
+      top: -80px;
+      background: $pirate-red;
+    }
+    &:nth-child(2) {
+      transform: skewY(8deg);
+      left: 46.99999%;
+      top: -50px;
+      background: #E4551E;
+    }
+    &:nth-child(3) {
+      transform: skewY(-8deg);
+      bottom: 0px;
+      left: 66.66666%;
+      background: $pirate-orange;
+    }
+    &:nth-child(4) {
+      transform: skewY(8deg);
+      height: 200px;
+      bottom: -140px;
+      background: #ED7824;
+    }
+  }
 }
+
