@@ -1,15 +1,13 @@
 class WorkshopsController < ApplicationController
   load_and_authorize_resource
   skip_authorize_resource only: [:show, :index]
-
   before_action :set_workshop, only: [:edit, :update, :destroy]
-
   before_action :set_renderer, only: [:show]
+  layout 'shrinkable', only: [:index, :show]
 
   # GET /workshops
   # GET /workshops.json
   def index
-    render layout: 'shrinkable'
     @workshops = Workshop.all
   end
 

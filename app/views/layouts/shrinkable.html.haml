@@ -4,9 +4,7 @@
     %title Carlsberg Pirates
     = csrf_meta_tags
 
-    %script{src: "https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js", type: "text/javascript"}
-
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application'
     = stylesheet_pack_tag 'application'
@@ -21,5 +19,8 @@
 %body.shrinkable
   = render 'shared/shrink_menu'
   = render 'shared/flash'
-  .container
+  .container.background-container
+    #space-invader
+    #pacman
+  %div{ class: "container #{'subnav' if content_for? :subnav}"}
     = yield

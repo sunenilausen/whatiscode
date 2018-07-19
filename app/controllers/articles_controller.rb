@@ -3,6 +3,7 @@ class ArticlesController < ApplicationController
   load_and_authorize_resource only: [:new, :create, :update, :destroy]
   before_action :set_renderer, only: [:show, :index]
   layout 'menuless', only: [:slides]
+  layout 'shrinkable', only: [:index]
 
   # GET /articles
   # GET /articles.json

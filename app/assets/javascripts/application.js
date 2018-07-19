@@ -16,4 +16,5 @@
 //= require materialize-sprockets
 //= require materialize-form
 //= require cocoon
+//= require tween-max.min.js
 //= require_tree .

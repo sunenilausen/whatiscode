@@ -28,8 +28,7 @@ $toolbarHeight: 64px;
   justify-content: space-between;
   position: relative;
   height: $toolbarHeight;  
-  padding: 0 16px;
-  // pointer-events: none;
+  padding: 0px;
   font-size: 20px;
 }
 
@@ -38,7 +37,6 @@ $toolbarHeight: 64px;
   bottom: 0;    
   transform-origin: left top;  
   margin-bottom: 24px;
-  margin-bottom: 16px;
   width: 100%;
 }
 
