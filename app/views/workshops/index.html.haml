@@ -1,20 +1,22 @@
 - content_for :title do
   Workshops
 
-- @workshops.each do |workshop|
-  .card.horizontal.workshop-card
-    .card-image
-      %img{src: workshop.image}
-    .card-stacked
-      .card-content
-        %span.card-title= workshop.title
-        %p= workshop.description
-        %i= workshop.key
-      .card-action
-        = link_to 'Kom i gang', workshop, class: 'btn btn-pirate-skyblue waves-effect waves-light'
-        - if can? :manage, workshop
-          = link_to 'Rediger', edit_workshop_path(workshop), class: 'btn btn-pirate-orange waves-effect waves-light'
-          = link_to 'Slet', workshop, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-pirate-red waves-effect waves-light'
+.row
+  - @workshops.each do |workshop|
+    .col.s12.m6.l4
+      .card.workshop-card
+        .card-image
+          %img{src: workshop.image}
+        .card-stacked
+          .card-content
+            %span.card-title= workshop.title
+            %p= workshop.description
+            %i= workshop.key
+          .card-action
+            = link_to 'Begynd', workshop, class: 'btn btn-pirate-skyblue waves-effect waves-light'
+            - if can? :manage, workshop
+              = link_to 'Rediger', edit_workshop_path(workshop), class: 'btn btn-pirate-orange waves-effect waves-light'
+              = link_to 'Slet', workshop, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-pirate-red waves-effect waves-light'
 
 - if can? :manage, Workshop
   .fixed-action-btn.vertical

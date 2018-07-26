@@ -3,13 +3,20 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .workshop-card {
-  max-height: 220px;
+  height: 420px;
   img {
-    max-height: 200px;
-    padding: 10px;
+    height: 190px;
+    overflow: hidden;
+    object-fit: cover;
+    margin-left: auto;
+    margin-right: auto;
   }
   .card-content {
-    max-height: 150px;
+    max-height: 350px;
     overflow: hidden;
   }
+}
+
+.lecture-img {
+  padding: 30px !important;
 }

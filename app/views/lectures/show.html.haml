@@ -1,13 +1,12 @@
 - content_for :subnav do
-  %li.tab
+  %li
     %a{href: "#front"}=@lecture.title
   - @lecture.article_insertions.each do |article_insertion|
-    %li.tab
+    %li
       %a{href: "##{article_insertion.article.key}"}=article_insertion.article.title
 
-
 .browser-default
-  .section{id: 'front'}
+  .section.scrollspy{id: 'front'}
     %h1  
       = @lecture.title
     %h2
@@ -16,19 +15,14 @@
       = @lecture.number
 
     = @markdown.render(@lecture.body).html_safe
-    - if @lecture.article_insertions.any?
-      %a.btn.btn-pirate-skyblue.waves-effect.waves-light.no-print.next-tab{data: {target: "#{@lecture.article_insertions.first.article.key}"}}
-        Next
 
   .page-break
   - @lecture.article_insertions.each.with_index do |article_insertion, index|
-    .article{id: article_insertion.article.key}
+    %hr
+    .article.scrollspy{id: article_insertion.article.key}
       .avoid-page-break
         = @markdown.render("###{article_insertion.article.title}").html_safe
         = @markdown.render(article_insertion.article.body).html_safe
-      - if index < @lecture.article_insertions.count - 1
-        %a.btn.btn-pirate-skyblue.waves-effect.waves-light.no-print.next-tab{data: {target: "#{@lecture.article_insertions[index + 1].article.key}"}}
-          Next
   
   -if can? :manage, Lecture
     .fixed-action-btn.vertical

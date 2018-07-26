@@ -1,12 +1,15 @@
 $(document).on('turbolinks:load', function() {
-  TweenLite.defaultEase = Linear.easeNone;
+
 
   var header     = document.querySelector("#shrink-app-header");
+  if (!header) { return }
   var bgBack     = document.querySelector("#shrink-background-back");
   var bgFront    = document.querySelector("#shrink-background-front");
   var toolbar    = document.querySelector("#shrink-small-toolbar");
   var largeTitle = document.querySelector("#shrink-large-title");
   var smallTitle = document.querySelector("#shrink-small-title");
+
+  TweenLite.defaultEase = Linear.easeNone;
 
   var deltaHeight = header.offsetHeight - toolbar.offsetHeight;
 

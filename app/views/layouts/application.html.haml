@@ -22,5 +22,13 @@
   .container.background-container
     #space-invader
     #pacman
-  %div{ class: "container #{'subnav' if content_for? :subnav}"}
-    = yield
+  .container
+    - if content_for? :subnav
+      .row
+        .col.s12.m8.offset-m1
+          = yield
+        .col.hide-on-small-only.m3
+          %ul.table-of-contents
+            = yield :subnav
+    - else
+      = yield

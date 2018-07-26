@@ -1,22 +1,20 @@
 - content_for :title do
   = @workshop.title
-  
-%p
-  %b Beskrivelse:
-  = @workshop.description
-%p
-  %b Lektioner:
-.row
-  - @workshop.lectures.each do |lecture|
-    .card.horizontal.workshop-card
-      .card-image
-        %img.workshop-card-image{src: lecture.preview_image}
+
+= @workshop.description
+%br
+%br
+- @workshop.lectures.each do |lecture|
+  .row
+    .col.s12.m5.lecture-img
+      %img.responsive-img{src: lecture.preview_image}
+    .card.horizontal.col.s12.m7
       .card-stacked
         .card-content.preview-highlight
-          %span.card-title= lecture.title
+          %span.card-title= "Lektion #{lecture.number}: #{lecture.title}"
           = @markdown.render(lecture.preview).html_safe
         .card-action
-          = link_to 'Gå til Lektionen', lecture, class: 'btn btn-pirate-skyblue waves-effect waves-light'
+          = link_to 'Begynd', lecture, class: 'btn btn-pirate-skyblue waves-effect waves-light'
           - if can? :manage, lecture
             = link_to 'Rediger', edit_lecture_path(lecture), class: 'btn btn-pirate-orange waves-effect waves-light'
             = link_to 'Slet', lecture, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-pirate-red waves-effect waves-light'
