@@ -8,6 +8,7 @@ class Article < ApplicationRecord
   validates :title, presence: true
   validates :key, presence: true, uniqueness: true
 
+  scope :documentation, -> { where(documentation: true) }
 
   def preview_image
     return preview_image_url if preview_image_url.present?

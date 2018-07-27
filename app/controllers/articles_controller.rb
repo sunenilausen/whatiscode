@@ -8,7 +8,7 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.all
+    @articles = Article.documentation
   end
 
   # GET /articles/1
@@ -76,7 +76,7 @@ class ArticlesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def article_params
-      params.require(:article).permit(:title, :key, :body, :preview, :preview_image_url, :preview_code)
+      params.require(:article).permit(:title, :key, :body, :preview, :preview_image_url, :preview_code, :documentation)
     end
 
     def set_renderer

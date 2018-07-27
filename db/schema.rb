@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180428094514) do
+ActiveRecord::Schema.define(version: 20180727113845) do
 
   create_table "article_lecture_insertions", force: :cascade do |t|
     t.integer "number"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20180428094514) do
     t.string "preview_image_url"
     t.integer "category_id"
     t.text "preview_code"
+    t.boolean "documentation", default: true
     t.index ["category_id"], name: "index_articles_on_category_id"
     t.index ["deleted_at"], name: "index_articles_on_deleted_at"
   end
