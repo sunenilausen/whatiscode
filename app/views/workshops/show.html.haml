@@ -4,7 +4,7 @@
 = @workshop.description
 %br
 %br
-- @workshop.lectures.each do |lecture|
+- @workshop.lectures.accessible_by(current_ability).each do |lecture|
   .row
     .col.s12.m5.lecture-img
       %img.responsive-img{src: lecture.preview_image}

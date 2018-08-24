@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180727113845) do
+ActiveRecord::Schema.define(version: 20180812141400) do
 
   create_table "article_lecture_insertions", force: :cascade do |t|
     t.integer "number"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20180727113845) do
     t.integer "category_id"
     t.text "preview_code"
     t.boolean "documentation", default: true
+    t.boolean "active", default: false
     t.index ["category_id"], name: "index_articles_on_category_id"
     t.index ["deleted_at"], name: "index_articles_on_deleted_at"
   end
@@ -55,6 +56,7 @@ ActiveRecord::Schema.define(version: 20180727113845) do
     t.datetime "deleted_at"
     t.text "preview"
     t.string "preview_image_url"
+    t.boolean "active", default: false
     t.index ["deleted_at"], name: "index_lectures_on_deleted_at"
     t.index ["workshop_id"], name: "index_lectures_on_workshop_id"
   end
@@ -90,6 +92,7 @@ ActiveRecord::Schema.define(version: 20180727113845) do
     t.datetime "updated_at", null: false
     t.datetime "deleted_at"
     t.string "image_url"
+    t.boolean "active", default: false
     t.index ["deleted_at"], name: "index_workshops_on_deleted_at"
   end
 

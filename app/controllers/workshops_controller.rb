@@ -8,7 +8,7 @@ class WorkshopsController < ApplicationController
   # GET /workshops
   # GET /workshops.json
   def index
-    @workshops = Workshop.all
+    @workshops = Workshop.accessible_by(current_ability)
   end
 
   # GET /workshops/1
@@ -88,6 +88,6 @@ class WorkshopsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def workshop_params
-      params.require(:workshop).permit(:key, :description, :title, :image_url)
+      params.require(:workshop).permit(:key, :description, :title, :image_url, :active)
     end
 end

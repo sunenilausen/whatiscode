@@ -8,6 +8,7 @@
     = f.input :body, input_html: { class: 'markdown-editor' }
     = f.input :preview, input_html: { class: 'markdown-editor' }
     = f.input :preview_image_url
+    = f.input :active, as: :boolean
     #article_insertions
       = f.simple_fields_for :article_insertions do |article_form|
         = render 'article_insertion_fields', f: article_form
