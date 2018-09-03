@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @showcase.title
+%p
+  %b Description:
+  = @showcase.description
+%p
+  %b Released at:
+  = @showcase.released_at
+%p
+  %b Image url:
+  = @showcase.image_url
+
+= link_to 'Edit', edit_showcase_path(@showcase)
+\|
+= link_to 'Back', showcases_path

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180812141400) do
+ActiveRecord::Schema.define(version: 20180902204154) do
 
   create_table "article_lecture_insertions", force: :cascade do |t|
     t.integer "number"
@@ -59,6 +59,32 @@ ActiveRecord::Schema.define(version: 20180812141400) do
     t.boolean "active", default: false
     t.index ["deleted_at"], name: "index_lectures_on_deleted_at"
     t.index ["workshop_id"], name: "index_lectures_on_workshop_id"
+  end
+
+  create_table "projects", force: :cascade do |t|
+    t.string "title"
+    t.date "completed_at"
+    t.string "owner_names"
+    t.string "image_url"
+    t.text "project_source"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "projects_showcases", id: false, force: :cascade do |t|
+    t.integer "project_id", null: false
+    t.integer "showcase_id", null: false
+    t.index ["project_id"], name: "index_projects_showcases_on_project_id"
+    t.index ["showcase_id"], name: "index_projects_showcases_on_showcase_id"
+  end
+
+  create_table "showcases", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.date "released_at"
+    t.string "image_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
