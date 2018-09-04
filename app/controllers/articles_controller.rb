@@ -68,11 +68,4 @@ class ArticlesController < ApplicationController
     def article_params
       params.require(:article).permit(:title, :key, :body, :preview, :preview_image_url, :preview_code, :documentation, :active)
     end
-
-    def set_renderer
-      render_options = {hard_wrap: true, link_attributes: {rel: 'nofollow'}}
-      engine_options = {fenced_code_blocks: true, autolink: true}
-      renderer = RougeHTML.new render_options
-      @markdown = Redcarpet::Markdown.new renderer, engine_options
-    end
 end
