@@ -1,7 +1,7 @@
 class Workshop < ApplicationRecord
   acts_as_paranoid
 
-  has_many :lectures
+  has_many :lectures, -> { order('number ASC') }
   has_many :articles, through: :lectures
 
   validates :title, presence: true
