@@ -15,15 +15,7 @@
               = yield :title
             %a{:href => "/"} Carlsberg Pirates
             %ul.right
-              %li
-                = link_to 'Workshops', workshops_path, class: 'white-text'
-              %li
-                = link_to 'Docs', "/docs", class: 'white-text'
-              %li
-                - if current_user
-                  = link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'white-text'
-                - else
-                  = link_to 'Sign in', new_user_session_path, class: 'white-text'
+              = render partial: 'shared/menu_items'
           #shrink-large-toolbar.shrink-app-toolbar.shrink-tall
             #shrink-large-title.shrink-large-title 
               = yield :title

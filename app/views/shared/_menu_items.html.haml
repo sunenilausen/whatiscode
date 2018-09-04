@@ -1,0 +1,13 @@
+%li
+  = link_to 'Projekter', projects_path, class: 'white-text'
+%li
+  = link_to 'Showcases', showcases_path, class: 'white-text'
+%li
+  = link_to 'Workshops', workshops_path, class: 'white-text'
+%li
+  = link_to 'Docs', "/docs", class: 'white-text'
+%li
+  - if current_user
+    = link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'white-text'
+  - else
+    = link_to 'Sign in', new_user_session_path, class: 'white-text'
