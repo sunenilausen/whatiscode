@@ -6,7 +6,6 @@ class LecturesController < ApplicationController
   layout 'menuless', only: [:slides]
 
   # GET /lectures/1
-  # GET /lectures/1.json
   def show
   end
 
@@ -20,42 +19,34 @@ class LecturesController < ApplicationController
   end
 
   # POST /lectures
-  # POST /lectures.json
   def create
     @lecture = Lecture.new(lecture_params)
 
     respond_to do |format|
       if @lecture.save
         format.html { redirect_to @lecture, notice: 'Lecture was successfully created.' }
-        format.json { render :show, status: :created, location: @lecture }
       else
         format.html { render :new }
-        format.json { render json: @lecture.errors, status: :unprocessable_entity }
       end
     end
   end
 
   # PATCH/PUT /lectures/1
-  # PATCH/PUT /lectures/1.json
   def update
     respond_to do |format|
       if @lecture.update(lecture_params)
         format.html { redirect_to @lecture, notice: 'Lecture was successfully updated.' }
-        format.json { render :show, status: :ok, location: @lecture }
       else
         format.html { render :edit }
-        format.json { render json: @lecture.errors, status: :unprocessable_entity }
       end
     end
   end
 
   # DELETE /lectures/1
-  # DELETE /lectures/1.json
   def destroy
     @lecture.destroy
     respond_to do |format|
       format.html { redirect_to lectures_url, notice: 'Lecture was successfully destroyed.' }
-      format.json { head :no_content }
     end
   end
 
