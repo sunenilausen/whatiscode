@@ -3,7 +3,7 @@ class ProjectsController < ApplicationController
 
   # GET /projects
   def index
-    @projects = Project.all
+    @projects = Project.accessible_by(current_ability).order(:created_at)
   end
 
   # GET /projects/1

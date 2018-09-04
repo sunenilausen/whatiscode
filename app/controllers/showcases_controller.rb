@@ -3,7 +3,7 @@ class ShowcasesController < ApplicationController
 
   # GET /showcases
   def index
-    @showcases = Showcase.all
+    @showcases = Showcase.accessible_by(current_ability).order(:released_at)
   end
 
   # GET /showcases/1
