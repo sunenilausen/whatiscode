@@ -65,12 +65,6 @@ class WorkshopsController < ApplicationController
   end
 
   private
-    def set_renderer
-      render_options = {hard_wrap: true, link_attributes: {rel: 'nofollow'}}
-      engine_options = {fenced_code_blocks: true, autolink: true}
-      renderer = RougeHTML.new render_options
-      @markdown = Redcarpet::Markdown.new renderer, engine_options
-    end
     # Use callbacks to share common setup or constraints between actions.
     def set_workshop
       @workshop = Workshop.find(params[:id])
