@@ -1,18 +1,8 @@
-%p#notice= notice
-
-%p
-  %b Title:
-  = @showcase.title
-%p
-  %b Description:
-  = @showcase.description
-%p
-  %b Released at:
+.browser-default
+  = @markdown.render("###{@showcase.title}").html_safe
   = @showcase.released_at
-%p
-  %b Image url:
-  = @showcase.image_url
+  = @markdown.render(@showcase.description).html_safe
 
-= link_to 'Edit', edit_showcase_path(@showcase)
-\|
-= link_to 'Back', showcases_path
+- if can? :manage, @showcase
+  .fixed-action-btn.vertical
+    = link_to edit_showcase_path(@showcase), class: 'btn-floating btn-large btn-pirate-red waves-effect waves-light'
