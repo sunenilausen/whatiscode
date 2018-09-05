@@ -1,4 +1,4 @@
-a.article-card-image {
+a.hover-card-image {
   color: black;
   img {
     height: 190px;
@@ -37,7 +37,13 @@ a.article-card-image {
   }
 }
 
-.article-card {
+a.full-hover-card-image {
+  img {
+    height: 350px;
+  }
+}
+
+.hover-card {
   height: 350px;
   overflow: hidden;
 }

@@ -4,9 +4,9 @@
 .row
   - @articles.each do |article|
     .col.s12.m6.l6.xl4
-      .card.article-card
+      .card.hover-card
         .card-image
-          = link_to article, class: "article-card-image" do
+          = link_to article, class: "hover-card-image" do
             %img.center{src: article.preview_image}
             .hover-content.preview-highlight
               = @markdown.render(article.preview).html_safe
