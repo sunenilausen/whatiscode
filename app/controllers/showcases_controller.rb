@@ -8,6 +8,7 @@ class ShowcasesController < ApplicationController
 
   # GET /showcases/1
   def show
+    set_renderer
   end
 
   # GET /showcases/new
