@@ -3,16 +3,16 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .workshop-card {
-  height: 420px;
+  height: 380px;
   img {
-    height: 190px;
+    height: 260px;
     overflow: hidden;
     object-fit: cover;
     margin-left: auto;
     margin-right: auto;
   }
   .card-content {
-    max-height: 350px;
+    max-height: 120px;
     overflow: hidden;
   }
 }

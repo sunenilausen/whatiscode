@@ -1,27 +1,27 @@
-%h1 Listing showcases
+- content_for :title do
+  Showcases
 
-%table
-  %thead
-    %tr
-      %th Title
-      %th Description
-      %th Released at
-      %th Image url
-      %th
-      %th
-      %th
+.row
+  - @showcases.each do |showcase|
+    .col.s12.m6.l4
+      .card.workshop-card
+        .card-image
+          %img{src: showcase.image_url}
+          = link_to showcase, class: "btn-floating halfway-fab waves-effect waves-light btn-pirate-skyblue" do
+            %i.material-icons arrow_right_alt
+          - if can? :manage, showcase
+            = link_to edit_showcase_path(showcase), class: "btn-floating fab-2 halfway-fab waves-effect waves-light btn-pirate-orange" do
+              %i.material-icons mode_edit
+            = link_to showcase, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn-floating fab-3 halfway-fab waves-effect waves-light btn-pirate-red" do
+              %i.material-icons delete
+        .card-stacked
+          .card-content
+            %span.card-title= showcase.title
+            %p
+              = showcase.description[0,35]
+              = "..."
 
-  %tbody
-    - @showcases.each do |showcase|
-      %tr
-        %td= showcase.title
-        %td= showcase.description
-        %td= showcase.released_at
-        %td= showcase.image_url
-        %td= link_to 'Show', showcase
-        %td= link_to 'Edit', edit_showcase_path(showcase)
-        %td= link_to 'Destroy', showcase, method: :delete, data: { confirm: 'Are you sure?' }
-
-%br
-
-= link_to 'New Showcase', new_showcase_path
+- if can? :manage, Showcase
+  .fixed-action-btn.vertical
+    = link_to new_showcase_path, class: 'btn-floating btn-large waves-effect waves-light red' do
+      %i.material-icons add

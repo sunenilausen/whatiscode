@@ -7,16 +7,18 @@
       .card.workshop-card
         .card-image
           %img{src: workshop.image}
+          = link_to workshop, class: "btn-floating halfway-fab waves-effect waves-light btn-pirate-skyblue" do
+            %i.material-icons arrow_right_alt
+          - if can? :manage, workshop
+            = link_to edit_workshop_path(workshop), class: "btn-floating fab-2 halfway-fab waves-effect waves-light btn-pirate-orange" do
+              %i.material-icons mode_edit
+            = link_to workshop, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn-floating fab-3 halfway-fab waves-effect waves-light btn-pirate-red" do
+              %i.material-icons delete
         .card-stacked
           .card-content
             %span.card-title= workshop.title
             %p= workshop.description
             %i= workshop.key
-          .card-action
-            = link_to 'Begynd', workshop, class: 'btn btn-pirate-skyblue waves-effect waves-light'
-            - if can? :manage, workshop
-              = link_to 'Rediger', edit_workshop_path(workshop), class: 'btn btn-pirate-orange waves-effect waves-light'
-              = link_to 'Slet', workshop, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-pirate-red waves-effect waves-light'
 
 - if can? :manage, Workshop
   .fixed-action-btn.vertical
