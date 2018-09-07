@@ -60,6 +60,6 @@ class ShowcasesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def showcase_params
-      params.require(:showcase).permit(:title, :description, :released_at, :image_url, :active)
+      params.require(:showcase).permit(:title, :description, :released_at, :image_url, :active, project_ids: [])
     end
 end
