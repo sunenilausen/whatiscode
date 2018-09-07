@@ -1,5 +1,6 @@
 class ShowcasesController < ApplicationController
   before_action :set_showcase, only: [:show, :edit, :update, :destroy]
+  layout 'shrinkable', only: [:index, :show]
 
   # GET /showcases
   def index
