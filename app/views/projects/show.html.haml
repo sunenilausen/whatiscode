@@ -6,4 +6,5 @@
 
 - if can? :manage, @project
   .fixed-action-btn.vertical
-    = link_to edit_project_path(@project), class: 'btn-floating btn-large btn-pirate-red waves-effect waves-light'
+    = link_to edit_project_path(@project), class: 'btn-floating btn-large btn-pirate-red waves-effect waves-light' do
+      %i.large.material-icons mode_edit
