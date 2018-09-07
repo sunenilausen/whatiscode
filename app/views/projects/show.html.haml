@@ -1,6 +1,10 @@
+- content_for :title do
+  = @project.title
+
 .browser-default
-  = @markdown.render("###{@project.title}").html_safe
-  = link_to @project.project_source if @project.project_source
+  - if @project.project_source
+    = link_to @project.project_source
+    %br
   = @project.completed_at
   = @markdown.render(@project.description).html_safe
 
