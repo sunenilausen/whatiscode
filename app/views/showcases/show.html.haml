@@ -10,16 +10,17 @@
     .col.s12.m6.l4
       .card.workshop-card
         .card-image
-          %img{src: project.image_url}
-          = link_to project, class: "btn-floating halfway-fab waves-effect waves-light btn-pirate-skyblue" do
-            %i.material-icons arrow_right_alt
+          = link_to project do
+            %img.center{src: project.image_url}
+            .hover-content
+              %i.material-icons info
           - if project.project_source
-            = link_to project.project_source, class: "btn-floating fab-2 halfway-fab waves-effect waves-light btn-pirate-orange" do
+            = link_to project.project_source, class: "btn-floating halfway-fab waves-effect waves-light btn-pirate-skyblue" do
               %i.material-icons link
           - if can? :manage, project
-            = link_to edit_project_path(project), class: "btn-floating fab-3 halfway-fab waves-effect waves-light btn-pirate-orange" do
+            = link_to edit_project_path(project), class: "btn-floating fab-2 halfway-fab waves-effect waves-light btn-pirate-orange" do
               %i.material-icons mode_edit
-            = link_to project, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn-floating fab-4 halfway-fab waves-effect waves-light btn-pirate-red" do
+            = link_to project, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn-floating fab-3 halfway-fab waves-effect waves-light btn-pirate-red" do
               %i.material-icons delete
 
         .card-stacked
