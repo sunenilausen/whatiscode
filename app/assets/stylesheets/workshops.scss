@@ -10,6 +10,39 @@
     object-fit: cover;
     margin-left: auto;
     margin-right: auto;
+    z-index: 0;
+  }
+  .hover-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    visibility: hidden;
+    position: absolute;    
+    width: 100%;
+    height: 260px;
+    z-index: 1;
+    background-color: $pirate-skyblue;
+    opacity: 0;
+    color: white;
+    i {
+      font-size: 100px;
+    }
+  }
+
+  &:hover {
+    .hover-content {
+      visibility: visible;
+      transition: visibility 0s, opacity 0.5s;
+      opacity: 0.8;
+    }
+  }
+
+  &:active {
+    .hover-content {
+      background-color: $pirate-orange;
+      color: white;
+    }
   }
   .card-content {
     max-height: 120px;
