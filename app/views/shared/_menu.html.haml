@@ -3,5 +3,8 @@
     .container
       .nav-wrapper
         %a.brand-logo.white-text{:href => "/"} Carlsberg Pirates
-        %ul.right
+        .right
+          %a.button-collapse.hide-on-large-and-up{"data-activates" => "mobile-menu", :href => "#"}
+            %i.material-icons menu
+        %ul.right.hide-on-med-and-down
           = render partial: 'shared/menu_items'

@@ -14,7 +14,9 @@
             #shrink-small-title.shrink-small-title
               = yield :title
             %a{:href => "/"} Carlsberg Pirates
-            %ul.right
+            %a.button-collapse.hide-on-large-and-up{"data-activates" => "mobile-menu", :href => "#"}
+              %i.material-icons menu
+            %ul.right.hide-on-med-and-down
               = render partial: 'shared/menu_items'
           #shrink-large-toolbar.shrink-app-toolbar.shrink-tall
             #shrink-large-title.shrink-large-title 
