@@ -21,7 +21,7 @@
   = render 'shared/flash'
   = render 'shared/sidenav'
   .container.background-container
-    #space-invader
-    #pacman
+    #space-invader.hide-on-small-only
+    #pacman.hide-on-small-only
   %div{ class: "container #{'subnav' if content_for? :subnav}"}
     = yield
