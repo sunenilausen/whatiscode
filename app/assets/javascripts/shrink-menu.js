@@ -1,6 +1,4 @@
 $(document).on('turbolinks:load', function() {
-
-
   var header     = document.querySelector("#shrink-app-header");
   if (!header) { return }
   var bgBack     = document.querySelector("#shrink-background-back");
