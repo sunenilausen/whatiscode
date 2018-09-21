@@ -32,6 +32,10 @@
   .element::-webkit-scrollbar { width: 0 !important; }
   .element { -ms-overflow-style: none !important; }
 
+  hr {
+    display: none;
+  }
+
   code, kbd, pre, samp, p {
     font-size: 11px !important;
   }

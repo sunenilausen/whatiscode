@@ -19,7 +19,7 @@
   .page-break
   - @lecture.article_insertions.each.with_index do |article_insertion, index|
     %hr
-    .article.scrollspy{id: article_insertion.article.key}
+    %section.article.scrollspy{id: article_insertion.article.key}
       .avoid-page-break
         = @markdown.render("###{article_insertion.article.title}").html_safe
         = @markdown.render(article_insertion.article.body).html_safe
