@@ -1,7 +1,7 @@
 - content_for :title do
   = @workshop.title
 
-= @workshop.description
+= @markdown.render(@workshop.description).html_safe
 %br
 %br
 - @workshop.lectures.accessible_by(current_ability).each do |lecture|
