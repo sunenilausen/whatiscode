@@ -3,7 +3,7 @@
 
   .form-inputs
     = f.input :title
-    = f.input :description
+    = f.input :description, input_html: { class: 'markdown-editor' }
     = f.input :key
     = f.input :image_url
     = f.input :active, as: :boolean
