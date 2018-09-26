@@ -2,8 +2,9 @@
   %li
     %a{href: "#front"}=@lecture.title
   - @lecture.article_insertions.each do |article_insertion|
-    %li
-      %a{href: "##{article_insertion.article.key}"}=article_insertion.article.title
+    - if can? :read, article_insertion.article
+      %li
+        %a{href: "##{article_insertion.article.key}"}=article_insertion.article.title
 
 .browser-default
   .section.scrollspy{id: 'front'}
