@@ -61,6 +61,10 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    carrierwave (1.2.3)
+      activemodel (>= 4.0.0)
+      activesupport (>= 4.0.0)
+      mime-types (>= 1.16)
     childprocess (0.8.0)
       ffi (~> 1.0, >= 1.0.11)
     cocoon (1.2.11)
@@ -327,6 +331,7 @@ DEPENDENCIES
   byebug
   cancancan
   capybara (~> 2.13.0)
+  carrierwave (~> 1.0)
   cocoon
   devise
   fabrication
@@ -367,7 +372,7 @@ DEPENDENCIES
   webpacker
 
 RUBY VERSION
-   ruby 2.4.1p111
+   ruby 2.5.1p57
 
 BUNDLED WITH
-   1.16.1
+   1.16.5
