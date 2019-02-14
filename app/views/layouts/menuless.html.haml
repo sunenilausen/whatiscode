@@ -1,6 +1,14 @@
 !!!
 %html
   %head
+    / Global site tag (gtag.js) - Google Analytics
+    %script{:async => "", :src => "https://www.googletagmanager.com/gtag/js?id=UA-134533962-1"}
+    :javascript
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-134533962-1');
+      
     %title Carlsberg Pirates
     = csrf_meta_tags
     %meta{:content => "reload", :name => "turbolinks-visit-control"}/
