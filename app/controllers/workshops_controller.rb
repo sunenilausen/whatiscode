@@ -35,33 +35,26 @@ class WorkshopsController < ApplicationController
   # POST /workshops
   def create
     @workshop = Workshop.new(workshop_params)
-
-    respond_to do |format|
-      if @workshop.save
-        format.html { redirect_to @workshop, notice: 'Workshop was successfully created.' }
-      else
-        format.html { render :new }
-      end
+    if @workshop.save
+      redirect_to @workshop, notice: 'Workshop was successfully created.'
+    else
+      render :new
     end
   end
 
   # PATCH/PUT /workshops/1
   def update
-    respond_to do |format|
-      if @workshop.update(workshop_params)
-        format.html { redirect_to @workshop, notice: 'Workshop was successfully updated.' }
-      else
-        format.html { render :edit }
-      end
+    if @workshop.update(workshop_params)
+      redirect_to @workshop, notice: 'Workshop was successfully updated.'
+    else
+      render :edit
     end
   end
 
   # DELETE /workshops/1
   def destroy
     @workshop.destroy
-    respond_to do |format|
-      format.html { redirect_to workshops_url, notice: 'Workshop was successfully destroyed.' }
-    end
+    redirect_to workshops_url, notice: 'Workshop was successfully destroyed.'
   end
 
   private

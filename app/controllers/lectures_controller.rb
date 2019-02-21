@@ -21,33 +21,26 @@ class LecturesController < ApplicationController
   # POST /lectures
   def create
     @lecture = Lecture.new(lecture_params)
-
-    respond_to do |format|
-      if @lecture.save
-        format.html { redirect_to @lecture, notice: 'Lecture was successfully created.' }
-      else
-        format.html { render :new }
-      end
+    if @lecture.save
+      redirect_to @lecture, notice: 'Lecture was successfully created.'
+    else
+      render :new
     end
   end
 
   # PATCH/PUT /lectures/1
   def update
-    respond_to do |format|
-      if @lecture.update(lecture_params)
-        format.html { redirect_to @lecture, notice: 'Lecture was successfully updated.' }
-      else
-        format.html { render :edit }
-      end
+    if @lecture.update(lecture_params)
+      redirect_to @lecture, notice: 'Lecture was successfully updated.'
+    else
+      render :edit
     end
   end
 
   # DELETE /lectures/1
   def destroy
     @lecture.destroy
-    respond_to do |format|
-      format.html { redirect_to lectures_url, notice: 'Lecture was successfully destroyed.' }
-    end
+    redirect_to lectures_url, notice: 'Lecture was successfully destroyed.'
   end
 
   def slides

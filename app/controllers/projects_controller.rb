@@ -24,33 +24,26 @@ class ProjectsController < ApplicationController
   # POST /projects
   def create
     @project = Project.new(project_params)
-
-    respond_to do |format|
-      if @project.save
-        format.html { redirect_to @project, notice: 'Project was successfully created.' }
-      else
-        format.html { render :new }
-      end
+    if @project.save
+      redirect_to @project, notice: 'Project was successfully created.'
+    else
+      render :new
     end
   end
 
   # PATCH/PUT /projects/1
   def update
-    respond_to do |format|
-      if @project.update(project_params)
-        format.html { redirect_to @project, notice: 'Project was successfully updated.' }
-      else
-        format.html { render :edit }
-      end
+    if @project.update(project_params)
+      redirect_to @project, notice: 'Project was successfully updated.'
+    else
+      render :edit
     end
   end
 
   # DELETE /projects/1
   def destroy
     @project.destroy
-    respond_to do |format|
-      format.html { redirect_to projects_url, notice: 'Project was successfully destroyed.' }
-    end
+    redirect_to projects_url, notice: 'Project was successfully destroyed.'
   end
 
   private

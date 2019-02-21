@@ -24,33 +24,26 @@ class ShowcasesController < ApplicationController
   # POST /showcases
   def create
     @showcase = Showcase.new(showcase_params)
-
-    respond_to do |format|
-      if @showcase.save
-        format.html { redirect_to @showcase, notice: 'Showcase was successfully created.' }
-      else
-        format.html { render :new }
-      end
+    if @showcase.save
+      redirect_to @showcase, notice: 'Showcase was successfully created.'
+    else
+      render :new
     end
   end
 
   # PATCH/PUT /showcases/1
   def update
-    respond_to do |format|
-      if @showcase.update(showcase_params)
-        format.html { redirect_to @showcase, notice: 'Showcase was successfully updated.' }
-      else
-        format.html { render :edit }
-      end
+    if @showcase.update(showcase_params)
+      redirect_to @showcase, notice: 'Showcase was successfully updated.'
+    else
+      render :edit
     end
   end
 
   # DELETE /showcases/1
   def destroy
     @showcase.destroy
-    respond_to do |format|
-      format.html { redirect_to showcases_url, notice: 'Showcase was successfully destroyed.' }
-    end
+    redirect_to showcases_url, notice: 'Showcase was successfully destroyed.'
   end
 
   private
