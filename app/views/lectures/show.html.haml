@@ -26,14 +26,14 @@
           = @markdown.render("###{article_insertion.article.title}").html_safe
           = @markdown.render(article_insertion.article.body).html_safe
   
-  -if can? :manage, Lecture
-    .fixed-action-btn.vertical
+  .fixed-action-btn.vertical
+    -if can? :manage, Lecture
       = link_to edit_lecture_path(@lecture), class: 'btn-floating btn-large btn-pirate-red' do
         %i.large.material-icons mode_edit
-      %ul
-        %li
-          = link_to print_lecture_path(@lecture), class: 'btn-floating green' do
-            %i.material-icons insert_drive_file
-        %li
-          = link_to slides_lecture_path(@lecture), class: 'btn-floating yellow darken-1' do
-            %i.material-icons slideshow
+    %ul
+      %li
+        = link_to print_lecture_path(@lecture), class: 'btn-floating green' do
+          %i.material-icons insert_drive_file
+      %li
+        = link_to slides_lecture_path(@lecture), class: 'btn-floating yellow darken-1' do
+          %i.material-icons slideshow
