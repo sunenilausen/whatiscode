@@ -28,3 +28,13 @@
     }
   }
 }
+
+nav {
+  input {
+    margin: 0 !important;
+    padding: 5px !important;
+  }
+  .input-field input[type=search] ~ .mdi-navigation-close, .input-field input[type=search] ~ .material-icons {
+    
+  }
+}
