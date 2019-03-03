@@ -1,29 +1,7 @@
 !!!
 %html
   %head
-    / Global site tag (gtag.js) - Google Analytics
-    %script{:async => "", :src => "https://www.googletagmanager.com/gtag/js?id=UA-134533962-1"}
-    :javascript
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-134533962-1');
-      
-    %title Carlsberg Pirates
-    = csrf_meta_tags
-
-    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
-    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-    = javascript_pack_tag 'application'
-    = stylesheet_pack_tag 'application'
-  
-    / Import Google Icon Font
-    %link{:href => "https://fonts.googleapis.com/icon?family=Material+Icons", :rel => "stylesheet"}/
-
-    / Material Design fonts
-    %link{:href => "//fonts.googleapis.com/css?family=Roboto:300,400,500,700", :rel => "stylesheet", :type => "text/css"}/
-
-    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
+    = render 'layouts/head'
 %body.front-page
   .navbar
     %nav.pirate-red-bg.nav-extended
