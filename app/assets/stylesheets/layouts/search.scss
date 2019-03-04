@@ -1,0 +1,22 @@
+body.search {
+  > .container {
+    padding-top: 80px;
+  }
+
+  nav {
+    input {
+      margin: 0 !important;
+      padding: 5px !important;
+    }
+    .label-icon {
+      display: flex;
+      align-items: center;
+      transform: translateY(0px);
+      &.active {
+        i.material-icons {
+          display: none;
+        }
+      }
+    }
+  }
+}
