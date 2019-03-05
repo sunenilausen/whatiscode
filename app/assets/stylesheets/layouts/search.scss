@@ -1,21 +1,29 @@
 body.search {
-  > .container {
-    padding-top: 80px;
-  }
-
-  nav {
+  .navbar-fixed {
+    form {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      height: 64px;
+    }
+    .input-field {
+      margin-top: 0px;
+      > i.material-icons {
+        top: 18px;
+      }
+    }
     input {
+      color: transparent;
       margin: 0 !important;
-      padding: 5px !important;
+      padding: 10px !important;
+      text-indent: 40px;
     }
     .label-icon {
       display: flex;
       align-items: center;
       transform: translateY(0px);
-      &.active {
-        i.material-icons {
-          display: none;
-        }
+      i.material-icons {
+        color: white;
       }
     }
   }

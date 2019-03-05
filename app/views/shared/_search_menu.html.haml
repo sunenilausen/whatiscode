@@ -8,9 +8,9 @@
             %i.material-icons menu
         %ul.right.hide-on-med-and-down
           = render partial: 'shared/menu_items'
-    = search_form_for @q do |f|
-      .input-field
-        = f.search_field :title_cont
-        %label.label-icon{:for => "search"}
-          %i.material-icons search
-        %i.material-icons close
+  = search_form_for @q do |f|
+    .input-field
+      = f.search_field :title_cont
+      %label.label-icon{:for => "search"}
+        %i.material-icons search
+      %i.material-icons close
