@@ -1,0 +1,25 @@
+body.front-page {
+  #pacman {
+    right: 25px;
+    top: 900px;
+  }
+  #space-invader {
+    left: -1em;
+    top: 750px;
+  }
+
+  .flash {
+    position: absolute;
+    top: 60px;
+    width: 100%;
+  }
+  
+  nav {
+    background-color: transparent !important;
+    box-shadow: none;
+  }
+  .navbar-fixed {
+    position: static !important;
+  }
+}
+

@@ -3,11 +3,13 @@ class ArticlesController < ApplicationController
   load_and_authorize_resource only: [:new, :create, :update, :destroy]
   before_action :set_renderer, only: [:show, :index]
   layout 'menuless', only: [:slides]
-  layout 'shrinkable', only: [:index]
+  layout 'search', only: [:index]
 
   # GET /articles
   def index
-    @articles = Article.documentation.accessible_by(current_ability)
+    @q = Article.documentation.accessible_by(current_ability).ransack(params[:q])
+    @articles = @q.result(distinct: true).includes(:category)
+    @articles = Article.documentation.accessible_by(current_ability) if @articles.empty?
   end
 
   # GET /articles/1

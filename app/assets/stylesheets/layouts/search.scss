@@ -1,0 +1,43 @@
+body.search {
+  .navbar-fixed {
+    nav {
+      z-index: 1;
+    }
+    form {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      height: 64px;
+      z-index: 0;
+      &.show {
+        z-index: 1000;
+        input {
+          z-index: 1000;
+        }
+      }
+    }
+    .input-field {
+      margin-top: 0px;
+      > i.material-icons {
+        top: 18px;
+      }
+    }
+    input {
+      color: transparent;
+      margin: 0 !important;
+      padding: 10px !important;
+      text-indent: 40px;
+    }
+    .label-icon {
+      display: flex;
+      align-items: center;
+      transform: translateY(0px);
+      i.material-icons {
+        color: white;
+      }
+    }
+    .search-toggle {
+      cursor: pointer;
+    }
+  }
+}

@@ -1,3 +1,3 @@
-$(document).on('turbolinks:load ready', function(){
+$(document).on('turbolinks:load', function(){
   $('.scrollspy').scrollSpy();
 });

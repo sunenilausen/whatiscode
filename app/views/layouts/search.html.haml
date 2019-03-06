@@ -1,0 +1,13 @@
+!!!
+%html
+  %head
+    = render 'layouts/head'
+%body.search
+  = render 'shared/search_menu'
+  = render 'shared/flash'
+  = render 'shared/sidenav'
+  .container
+    .background-container
+      #space-invader.hide-on-small-only
+      #pacman.hide-on-small-only
+    = yield

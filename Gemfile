@@ -90,5 +90,6 @@ gem 'rails_admin_material'
 gem 'redcarpet'
 gem 'rouge'
 gem 'cocoon'
+gem 'ransack'
 
 ruby "2.5.1"

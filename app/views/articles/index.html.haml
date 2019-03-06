@@ -1,6 +1,14 @@
 - content_for :title do
   Docs
 
+- content_for :search do
+  = search_form_for @q do |f|
+    .input-field
+      = f.search_field :title_cont
+      %label.label-icon{:for => "search"}
+        %i.material-icons search
+      .material-icons close
+
 .row
   - @articles.each do |article|
     .col.s12.m6.l6.xl4
