@@ -99,7 +99,7 @@ body.shrinkable {
   transform-origin: 0;
   overflow: hidden;
   background: linear-gradient(150deg,$pirate-red 15%,$pirate-orange 70%,$pirate-yellow 94%);
-  z-index: -1;
+  z-index: 0;
   span {
     height: 180px;
     position: absolute;
