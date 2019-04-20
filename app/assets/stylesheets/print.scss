@@ -60,6 +60,15 @@
   #pacman { display: none !important; }
   #space-invader { display: none !important; }
 
+  code {
+    padding: 4px 2px;
+    font-size: 1em;
+    margin: 0;
+    color: black;
+    background: #f8f8f8;
+    border-bottom: 1px dashed black;
+  }
+
   pre.highlight{
     font-size: 0.8em;
     text-align: initial;
