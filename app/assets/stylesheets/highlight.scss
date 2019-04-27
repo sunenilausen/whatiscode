@@ -156,9 +156,28 @@ code {
     .vm { color: #19177C } /* Name.Variable.Magic */
     .il { color: #666666 } /* Literal.Number.Integer.Long */
   }
+
+  code {
+    background-color: white;
+    color: black;
+    text-align: initial;
+    max-width: 100%;
+    padding: 0;
+    overflow: auto;
+    word-wrap: normal;
+  }
 }
 
 .preview-highlight {
+  code {
+    background-color: white;
+    color: black;
+    text-align: initial;
+    max-width: 100%;
+    padding: 0;
+    overflow: auto;
+    word-wrap: normal;
+  }
   .highlight {
     padding: 2px 0;
     font-size: 12px;
