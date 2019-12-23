@@ -4,7 +4,7 @@
   "dependencies": {
     "@rails/webpacker": "^3.2.1",
     "simplemde": "^1.11.2",
-    "yarn": "^1.15.2"
+    "yarn": "^1.17.3"
   },
   "devDependencies": {
     "webpack-dev-server": "^2.11.1"
