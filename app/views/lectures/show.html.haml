@@ -37,12 +37,7 @@
           = link_to slides_lecture_path(@lecture), class: 'btn-floating yellow darken-1' do
             %i.material-icons slideshow
     - else
-      .btn-floating.btn-large.btn-pirate-red
-        %i.large.material-icons menu
-      %ul
-        %li
-          = link_to print_lecture_path(@lecture), class: 'btn-floating green' do
-            %i.material-icons insert_drive_file
-        %li
-          = link_to slides_lecture_path(@lecture), class: 'btn-floating yellow darken-1' do
-            %i.material-icons slideshow
+      = link_to print_lecture_path(@lecture), class: 'btn-floating green', style: "margin-right: 10px" do
+        %i.material-icons insert_drive_file
+      = link_to slides_lecture_path(@lecture), class: 'btn-floating yellow darken-1' do
+        %i.material-icons slideshow
