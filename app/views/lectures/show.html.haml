@@ -8,7 +8,7 @@
 
 .browser-default
   .section.scrollspy{id: 'front'}
-    %h1  
+    %h1
       = @lecture.title
     %h2
       = @lecture.workshop.title
@@ -20,12 +20,11 @@
   .page-break
   - @lecture.article_insertions.each.with_index do |article_insertion, index|
     - if can? :read, article_insertion.article
-      %hr
       %section.article.scrollspy{id: article_insertion.article.key}
         .avoid-page-break
           = @markdown.render("###{article_insertion.article.title}").html_safe
           = @markdown.render(article_insertion.article.body).html_safe
-  
+
   .fixed-action-btn.vertical
     -if can? :manage, Lecture
       = link_to edit_lecture_path(@lecture), class: 'btn-floating btn-large btn-pirate-red' do
