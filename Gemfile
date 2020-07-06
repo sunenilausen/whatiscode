@@ -34,7 +34,7 @@ gem 'turbolinks', '~> 5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-# 
+#
 
 group :test do
   gem 'm'
@@ -91,4 +91,4 @@ gem 'rouge'
 gem 'cocoon'
 gem 'ransack'
 
-ruby "2.5.1"
+ruby "2.7.0"
