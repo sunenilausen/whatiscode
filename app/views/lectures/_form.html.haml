@@ -9,6 +9,7 @@
     = f.input :preview, input_html: { class: 'markdown-editor' }
     = f.input :preview_image_url
     = f.input :active, as: :boolean
+    = f.input :prologue, as: :boolean
     - @lecture.articles.each do |article|
       = link_to article.title, article, class: 'btn btn-pirate-orange waves-effect waves-light'
 

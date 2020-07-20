@@ -8,12 +8,16 @@
 
 .browser-default
   .section.scrollspy{id: 'front'}
-    %h1
-      = @lecture.title
-    %h2
-      = @lecture.workshop.title
-      = '#'
-      = @lecture.number
+    - if @lecture.prologue?
+      %h1
+        = "Forarbejde: #{@lecture.title}"
+    - else
+      %h1
+        = @lecture.title
+      %h2
+        = @lecture.workshop.title
+        = '#'
+        = @lecture.number
 
     = @markdown.render(@lecture.body).html_safe
 

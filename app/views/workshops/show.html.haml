@@ -11,7 +11,10 @@
     .card.horizontal.col.s12.m7
       .card-stacked
         .card-content.preview-highlight
-          %span.card-title= "Lektion #{lecture.number}: #{lecture.title}"
+          - if lecture.prologue?
+            %span.card-title= "Forarbejde: #{lecture.title}"
+          - else
+            %span.card-title= "Lektion #{lecture.number}: #{lecture.title}"
           = @markdown.render(lecture.preview).html_safe
         .card-action
           = link_to 'Begynd', lecture, class: 'btn btn-pirate-skyblue waves-effect waves-light'
