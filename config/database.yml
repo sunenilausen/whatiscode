@@ -7,11 +7,13 @@ default: &default
 development:
   <<: *default
   database: whatiscode_dev
+  host: localhost
   username: postgres
 
 test:
   <<: *default
   database: whatiscode_test
+  host: localhost
   username: postgres
 
 production:
