@@ -37,14 +37,7 @@ gem 'turbolinks', '~> 5'
 #
 
 group :test do
-  gem 'm'
-  gem 'mocha', :require => false
-  gem 'minitest-spec-rails'
-  gem 'simplecov'
-  gem 'timecop'
-  # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '~> 2.13.0'
-  gem 'selenium-webdriver'
+  gem 'rspec-rails'
 end
 
 group :development, :test do
@@ -53,6 +46,7 @@ group :development, :test do
   gem 'letter_opener'
   gem 'fabrication'
   gem 'faker'
+  gem "pry"
 end
 
 group :development do
