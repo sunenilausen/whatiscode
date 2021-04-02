@@ -1,7 +1,17 @@
 module ArticlesHelper
 
   def raspberry_markdown_to_html(s)
-    replace_collapsibles(s)
+    s = replace_collapsibles(s)
+    s = remove_target_blanks(s)
+    #s = replace_attributes(s)
+    #s = remove_tasks(s)
+    #s = replace_tasks(s)
+    #s = replace_hints(s)
+
+  end
+
+  def remove_target_blanks(s)
+    s.gsub("{:target=\"_blank\"}", "")
   end
 
   def replace_collapsibles(s)
