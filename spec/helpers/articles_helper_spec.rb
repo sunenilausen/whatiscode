@@ -23,10 +23,10 @@ rawr
         result =
 """
 rawr
-<ul class='collapsible'><li><div class='collapsible-header'><i class='material-icons'>Info</i> What you will learn
-</div><div class='collapsible-body'><span>
+<ul class='collapsible'><li><div class='collapsible-header'><i class='material-icons'>info</i> What you will learn
+</div><div class='collapsible-body'>
 stuff
-</span></div></li></ul>
+</div></li></ul>
 rawr
 """
         expect(subject).to eq(result)
