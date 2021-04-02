@@ -3,9 +3,7 @@ module ArticlesHelper
   def raspberry_markdown_to_html(s)
     s = replace_collapsibles(s)
     s = remove_target_blanks(s)
-    #s = replace_attributes(s)
     s = remove_tasks(s)
-    #s = replace_tasks(s)
     s = replace_hints(s)
   end
 
@@ -17,8 +15,7 @@ module ArticlesHelper
   end
 
   def remove_tasks(s)
-    s = s.gsub("--- task ---", "")
-    s.gsub("--- /task ---", "")
+    s.gsub("--- task ---", "").gsub("--- /task ---", "")
   end
 
   def remove_target_blanks(s)
@@ -42,19 +39,14 @@ module ArticlesHelper
     collapsible_title_tag_start = "<div class='collapsible-header'><i class='material-icons'>Info</i>"
     collapsible_title_tag_end = "</div><div class='collapsible-body'><span>"
     collapsible_tag_end = "</span></div></li></ul>"
-
-    s = s.gsub("--- collapse ---", collapsible_tag_start)
-    s = s.gsub("--- /collapse ---", collapsible_tag_end)
-
-    #title_regex = /---\ntitle:\s(.*)\n---/
-    #title = title_regex.match(s)
-
     title_start =
 """
 ---
 title:"""
 
-    s = s.gsub(title_start, collapsible_title_tag_start)
-    s.gsub("---", collapsible_title_tag_end)
+    s.gsub("--- collapse ---", collapsible_tag_start)
+      .gsub("--- /collapse ---", collapsible_tag_end)
+      .gsub(title_start, collapsible_title_tag_start)
+      .gsub("---", collapsible_title_tag_end)
   end
 end
