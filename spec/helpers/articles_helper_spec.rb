@@ -24,19 +24,11 @@ rawr
 """
 rawr
 <ul class='collapsible'><li><div class='collapsible-header'><i class='material-icons'>info</i> What you will learn
-</div><div class='collapsible-body'>
+</div><div class='collapsible-body' markdown='1'>
 stuff
 </div></li></ul>
 rawr
 """
-        expect(subject).to eq(result)
-      end
-    end
-
-    context "text has target blank attributes" do
-      let(:text) { "This project covers [Curriculum](http://rpf.io/curriculum){:target=\"_blank\"}" }
-      it "removes target blank attribute" do
-        result = "This project covers [Curriculum](http://rpf.io/curriculum)"
         expect(subject).to eq(result)
       end
     end
@@ -61,9 +53,9 @@ Open Python 3 IDLE, and create a new file by clicking on**File** and then on **N
 """
 
 Use the 'change directory' command `cd` to open the new directory.
-```bash
+~~~bash
 cd webapp
-```
+~~~
 
 
 Open Python 3 IDLE, and create a new file by clicking on**File** and then on **New file**.
@@ -89,13 +81,13 @@ You can duplicate the code you used to create a 'D' and then change the letters 
       it "replaces hints with html carousels" do
         result =
 """
-<div class='carousel'> <a class='carousel-item'>
+<div class='carousel carousel-slider' markdown='0'> <div class='carousel-item red white-text' style='padding: 5px;' markdown='1'>
 You need to click the + on the union block to add space for two more letters.
-</a> <a class='carousel-item'>
+</div> <div class='carousel-item red white-text' style='padding: 5px;' markdown='1'>
 You can duplicate the code you used to create a 'D' and then change the letters and the X values.
-</a> <a class='carousel-item'>
+</div> <div class='carousel-item red white-text' style='padding: 5px;' markdown='1'>
 ![screenshot](images/coder-hint-er.png)
-</a> </div>
+</div> </div>
 """
         expect(subject).to eq(result)
       end

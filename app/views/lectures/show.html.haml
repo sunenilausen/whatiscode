@@ -27,7 +27,7 @@
       %section.article.scrollspy{id: article_insertion.article.key}
         .avoid-page-break
           = @markdown.render("###{article_insertion.article.title}").html_safe
-          = @markdown.render(article_insertion.article.body).html_safe
+          = Kramdown::Document.new(raspberry_markdown_to_html(article_insertion.article.body),{ input: "Kramdown", parse_block_html: true, parse_span_html: true }).to_html.html_safe
 
   .fixed-action-btn.vertical
     -if can? :manage, Lecture

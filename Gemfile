@@ -78,7 +78,10 @@ gem 'materialize-sass'
 gem 'paranoia'
 gem 'materialize-form'
 gem 'rails_admin_material'
+
 gem 'redcarpet'
+gem 'kramdown'
+
 gem 'rouge'
 gem 'cocoon'
 gem 'ransack'

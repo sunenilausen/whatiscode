@@ -132,6 +132,8 @@ GEM
       activerecord
       kaminari-core (= 1.1.1)
     kaminari-core (1.1.1)
+    kramdown (2.3.1)
+      rexml
     launchy (2.4.3)
       addressable (~> 2.3)
     letter_opener (1.6.0)
@@ -230,6 +232,7 @@ GEM
     responders (3.0.0)
       actionpack (>= 5.0)
       railties (>= 5.0)
+    rexml (3.2.4)
     rouge (2.2.1)
     rspec-core (3.10.1)
       rspec-support (~> 3.10.0)
@@ -325,6 +328,7 @@ DEPENDENCIES
   haml-rails
   i18n-tasks (~> 0.9.13)
   jquery-rails
+  kramdown
   letter_opener
   listen (>= 3.0.5, < 3.2)
   materialize-form
