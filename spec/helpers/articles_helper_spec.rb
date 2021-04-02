@@ -23,7 +23,7 @@ rawr
         result =
 """
 rawr
-<ul class='collapsible'><li><div class='collapsible-header'><i class='material-icons'>info</i> What you will learn
+<ul class='collapsible'><li><div class='collapsible-header'><i class='material-icons blue-text'>info</i> What you will learn
 </div><div class='collapsible-body' markdown='1'>
 stuff
 </div></li></ul>

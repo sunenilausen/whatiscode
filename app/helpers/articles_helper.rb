@@ -32,7 +32,7 @@ module ArticlesHelper
 
   def collapsible_to_html(s)
     collapsible_tag_start = "<ul class='collapsible'><li>"
-    collapsible_title_tag_start = "<div class='collapsible-header'><i class='material-icons'>info</i>"
+    collapsible_title_tag_start = "<div class='collapsible-header'><i class='material-icons blue-text'>info</i>"
     collapsible_title_tag_end = "</div><div class='collapsible-body' markdown='1'>"
     collapsible_tag_end = "</div></li></ul>"
     title_start =
