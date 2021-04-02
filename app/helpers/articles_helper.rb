@@ -4,10 +4,15 @@ module ArticlesHelper
     s = replace_collapsibles(s)
     s = remove_target_blanks(s)
     #s = replace_attributes(s)
-    #s = remove_tasks(s)
+    s = remove_tasks(s)
     #s = replace_tasks(s)
     #s = replace_hints(s)
 
+  end
+
+  def remove_tasks(s)
+    s = s.gsub("--- task ---", "")
+    s.gsub("--- /task ---", "")
   end
 
   def remove_target_blanks(s)

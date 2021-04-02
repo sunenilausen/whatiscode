@@ -40,5 +40,37 @@ rawr
         expect(subject).to eq(result)
       end
     end
+
+    context "text has tasks" do
+      let(:text) do
+"""
+--- task ---
+Use the 'change directory' command `cd` to open the new directory.
+```bash
+cd webapp
+```
+--- /task ---
+--- task ---
+Open Python 3 IDLE, and create a new file by clicking on**File** and then on **New file**.
+--- /task ---
+"""
+      end
+
+      it "removes task keywords" do
+        result =
+"""
+
+Use the 'change directory' command `cd` to open the new directory.
+```bash
+cd webapp
+```
+
+
+Open Python 3 IDLE, and create a new file by clicking on**File** and then on **New file**.
+
+"""
+        expect(subject).to eq(result)
+      end
+    end
   end
 end
