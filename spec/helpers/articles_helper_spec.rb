@@ -72,5 +72,33 @@ Open Python 3 IDLE, and create a new file by clicking on**File** and then on **N
         expect(subject).to eq(result)
       end
     end
+
+    context "text has hints" do
+      let(:text) do
+"""
+--- hints --- --- hint ---
+You need to click the + on the union block to add space for two more letters.
+--- /hint --- --- hint ---
+You can duplicate the code you used to create a 'D' and then change the letters and the X values.
+--- /hint --- --- hint ---
+![screenshot](images/coder-hint-er.png)
+--- /hint --- --- /hints ---
+"""
+      end
+
+      it "replaces hints with html carousels" do
+        result =
+"""
+<div class='carousel'> <a class='carousel-item'>
+You need to click the + on the union block to add space for two more letters.
+</a> <a class='carousel-item'>
+You can duplicate the code you used to create a 'D' and then change the letters and the X values.
+</a> <a class='carousel-item'>
+![screenshot](images/coder-hint-er.png)
+</a> </div>
+"""
+        expect(subject).to eq(result)
+      end
+    end
   end
 end

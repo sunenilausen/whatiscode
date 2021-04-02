@@ -6,8 +6,14 @@ module ArticlesHelper
     #s = replace_attributes(s)
     s = remove_tasks(s)
     #s = replace_tasks(s)
-    #s = replace_hints(s)
+    s = replace_hints(s)
+  end
 
+  def replace_hints(s)
+    s.gsub("--- hints ---", "<div class='carousel'>")
+      .gsub("--- hint ---", "<a class='carousel-item'>")
+      .gsub("--- /hint ---", "</a>")
+      .gsub("--- /hints ---", "</div>")
   end
 
   def remove_tasks(s)
