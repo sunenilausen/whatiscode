@@ -36,6 +36,8 @@ gem 'turbolinks', '~> 5'
 # gem 'capistrano-rails', group: :development
 #
 
+gem 'bootsnap'
+
 group :test do
   gem 'rspec-rails'
 end
