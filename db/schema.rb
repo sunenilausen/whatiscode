@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200715174024) do
+ActiveRecord::Schema.define(version: 20210403092057) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "article_lecture_insertions", force: :cascade do |t|
     t.integer "number"
@@ -79,16 +82,6 @@ ActiveRecord::Schema.define(version: 20200715174024) do
     t.integer "showcase_id", null: false
     t.index ["project_id"], name: "index_projects_showcases_on_project_id"
     t.index ["showcase_id"], name: "index_projects_showcases_on_showcase_id"
-  end
-
-  create_table "showcases", force: :cascade do |t|
-    t.string "title"
-    t.text "description"
-    t.date "released_at"
-    t.string "image_url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.boolean "active", default: false
   end
 
   create_table "users", force: :cascade do |t|
