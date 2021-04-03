@@ -12,6 +12,11 @@
     = f.input :documentation, as: :boolean
     = f.input :active, as: :boolean
     %br
+    = f.file_field :images, multiple: true
+    - @article.images.each do |image|
+      = url_for(image)
+      = image_tag image
+    %br
 
   .form-actions
     = f.button :submit

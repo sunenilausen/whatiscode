@@ -1,10 +1,12 @@
 class Article < ApplicationRecord
   acts_as_paranoid
 
+  has_many_attached :images
+
   has_many :article_insertions, class_name: 'ArticleLectureInsertion', inverse_of: :article
   has_many :lectures, through: :article_insertions
   belongs_to :category, optional: true
-  
+
   validates :title, presence: true
   validates :key, presence: true, uniqueness: true
 

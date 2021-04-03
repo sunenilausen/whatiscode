@@ -87,4 +87,6 @@ gem 'rouge'
 gem 'cocoon'
 gem 'ransack'
 
+gem "aws-sdk-s3", require: false
+
 ruby "2.7.1"
