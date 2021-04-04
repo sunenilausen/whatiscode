@@ -40,6 +40,8 @@ gem 'bootsnap'
 
 group :test do
   gem 'rspec-rails'
+  gem 'capybara'
+  gem 'database_cleaner-active_record'
 end
 
 group :development, :test do

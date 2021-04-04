@@ -21,6 +21,7 @@
 /yarn-error.log
 
 .byebug_history
+/public/assets
 /public/packs
 /public/packs-test
 /node_modules
@@ -30,4 +31,8 @@ yarn-error.log*
 
 /coverage
 
-.eslintrc.js
+.eslintrc.js/public/packs
+/public/packs-test
+/node_modules
+yarn-debug.log*
+.yarn-integrity
