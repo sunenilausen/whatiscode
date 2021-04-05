@@ -1,0 +1,14 @@
+<%= simple_form_for(@workshop) do |f| %>
+  <%= f.error_notification %>
+  <div class="form-inputs">
+    <%= f.input :title %>
+    <%= f.input :description, input_html: { class: 'markdown-editor' } %>
+    <%= f.input :key %>
+    <%= f.input :image_url %>
+    <%= f.input :active, as: :boolean %>
+    <br/>
+  </div>
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

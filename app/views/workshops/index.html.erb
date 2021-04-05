@@ -1,0 +1,47 @@
+<% content_for :title do %>
+  Workshops
+<% end %>
+<div class="row">
+  <% @workshops.each do |workshop| %>
+    <div class="col s12 m6 l4">
+      <div class="card workshop-card">
+        <div class="card-image">
+          <%= link_to workshop do %>
+            <img class="center" src="<%= workshop.image %>"/>
+            <div class="hover-content">
+              <i class="material-icons">info</i>
+            </div>
+          <% end %>
+          <% if can? :manage, workshop %>
+            <%= link_to edit_workshop_path(workshop), class: "btn-floating halfway-fab waves-effect waves-light btn-pirate-skyblue" do %>
+              <i class="material-icons">mode_edit</i>
+            <% end %>
+            <%= link_to workshop, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn-floating fab-2 halfway-fab waves-effect waves-light btn-pirate-red" do %>
+              <i class="material-icons">delete</i>
+            <% end %>
+          <% end %>
+        </div>
+        <div class="card-stacked">
+          <div class="card-content">
+            <span class="card-title">
+              <%= workshop.title %>
+            </span>
+            <p>
+              <%= workshop.description %>
+            </p>
+            <i>
+              <%= workshop.key %>
+            </i>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+<% if can? :manage, Workshop %>
+  <div class="fixed-action-btn vertical">
+    <%= link_to new_workshop_path, class: 'btn-floating btn-large waves-effect waves-light red' do %>
+      <i class="material-icons">add</i>
+    <% end %>
+  </div>
+<% end %>

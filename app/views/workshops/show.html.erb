@@ -1,0 +1,52 @@
+<% content_for :title do %>
+  <%= @workshop.title %>
+<% end %>
+<%= @markdown.render(@workshop.description).html_safe %>
+<br/>
+<br/>
+<% @workshop.lectures.accessible_by(current_ability).each do |lecture| %>
+  <div class="row">
+    <div class="col s12 m5 lecture-img">
+      <img class="responsive-img" src="<%= lecture.preview_image %>"/>
+    </div>
+    <div class="card horizontal col s12 m7">
+      <div class="card-stacked">
+        <div class="card-content preview-highlight">
+          <% if lecture.prologue? %>
+            <span class="card-title">
+              <%= "Forarbejde: #{lecture.title}" %>
+            </span>
+          <% else %>
+            <span class="card-title">
+              <%= "Lektion #{lecture.number}: #{lecture.title}" %>
+            </span>
+          <% end %>
+          <%= @markdown.render(lecture.preview).html_safe %>
+        </div>
+        <div class="card-action">
+          <%= link_to 'Begynd', lecture, class: 'btn btn-pirate-skyblue waves-effect waves-light' %>
+          <% if can? :manage, lecture %>
+            <%= link_to 'Rediger', edit_lecture_path(lecture), class: 'btn btn-pirate-orange waves-effect waves-light' %>
+            <%= link_to 'Slet', lecture, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-pirate-red waves-effect waves-light' %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+<% if can? :create, Lecture %>
+  <div class="fixed-action-btn vertical">
+    <%= link_to new_lecture_path, class: 'btn-floating btn-large waves-effect waves-light btn-pirate-red' do %>
+      <i class="material-icons">add</i>
+    <% end %>
+    <% if can? :edit, @workshop %>
+      <ul>
+        <li>
+          <%= link_to edit_workshop_path(@workshop), class: 'btn-floating btn-pirate-orange waves-effect waves-light' do %>
+            <i class="material-icons">mode_edit</i>
+          <% end %>
+        </li>
+      </ul>
+    <% end %>
+  </div>
+<% end %>

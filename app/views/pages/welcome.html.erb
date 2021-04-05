@@ -1,0 +1,54 @@
+<header>
+  <div class="stripes">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <div class="container">
+    <div class="intro white-text">
+      <h1>Hvaderkode.dk har guides til at lære forskelligt tech</h1>
+      <h4>Kodning til web, spil, musik, IoT og mere</h4>
+      <br/>
+      <%= link_to 'Workshops', workshops_path, class: 'btn-large btn-pirate-skyblue waves-effect waves-light' %>
+    </div>
+    <div class="flex-right">
+      <div class="slanted-code">
+        <div class="browser-default card-panel left-align light-highlight">
+          <%= @markdown.render(@js_example).html_safe %>
+        </div>
+        <div class="right-align">
+          <btn class="btn-large btn-pirate-skyblue waves-effect waves-light" href="#" id="run-js-welcome">
+            Kør Koden
+          </btn>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<header>
+  <div class="container">
+    <div class="row p3-top p3-bottom">
+      <div class="col s12 m4 offset-m2 right-align">
+        <h5 class="accent-header">Lav musik med kode</h5>
+        Kom i gang med at lære kode ved at lave musik i Sonic Pi
+        Vi har guides, udprint, slides og mere, der kan hjælpe dig forstå og kode musik.
+      </div>
+      <div class="col s12 m6">
+        <img class="responsive-img" src="https://i0.wp.com/soiposervices.com/wp-content/uploads/2016/06/sonic-pi-web-logo.png?fit=467%2C296&ssl=1" width="200"/>
+      </div>
+    </div>
+    <div class="flyt-musen-her light-highlight">
+      <%= @markdown.render(@css_example).html_safe %>
+    </div>
+    <a class="btn-large btn-pirate-skyblue waves-effect waves-light" href="/web">
+      Lær HTML og CSS
+    </a>
+    <a class="btn-large btn-pirate-red waves-effect waves-light" href="https://codepen.io/sunenilausen/pen/LdoVPY">
+      Brug i Codepen
+    </a>
+  </div>
+</header>
+<div class="hide-on-med-and-down" id="space-invader"></div>
+<div class="hide-on-med-and-down" id="pacman"></div>

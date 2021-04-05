@@ -1,0 +1,43 @@
+<h1>Listing lectures</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Number</th>
+      <th>Title</th>
+      <th>Body</th>
+      <th>Workshop</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @lectures.each do |lecture| %>
+      <tr>
+        <td>
+          <%= lecture.number %>
+        </td>
+        <td>
+          <%= lecture.title %>
+        </td>
+        <td>
+          <%= lecture.body[0,50] %>
+        </td>
+        <td>
+          <%= lecture.workshop %>
+        </td>
+        <td>
+          <%= link_to 'Show', lecture %>
+        </td>
+        <td>
+          <%= link_to 'Edit', edit_lecture_path(lecture) %>
+        </td>
+        <td>
+          <%= link_to 'Destroy', lecture, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br/>
+<%= link_to 'New Lecture', new_lecture_path %>

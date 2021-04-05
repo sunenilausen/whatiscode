@@ -1,0 +1,48 @@
+<% content_for :title do %>
+  Docs
+<% end %>
+<% content_for :search do %>
+  <%= search_form_for @q do |f| %>
+    <div class="input-field">
+      <%= f.search_field :title_cont %>
+      <label class="label-icon" for="search">
+        <i class="material-icons">search</i>
+      </label>
+      <div class="material-icons">close</div>
+    </div>
+  <% end %>
+<% end %>
+<div class="row">
+  <% @articles.each do |article| %>
+    <div class="col s12 m6 l6 xl4">
+      <div class="card hover-card">
+        <div class="card-image">
+          <%= link_to article, class: "hover-card-image" do %>
+            <img class="center" src="<%= article.preview_image %>"/>
+            <div class="hover-content preview-highlight">
+              <%= @markdown.render(article.preview).html_safe %>
+            </div>
+          <% end %>
+          <% if can? :manage, article %>
+            <%= link_to edit_article_path(article), class: "btn-floating halfway-fab waves-effect waves-light btn-pirate-orange" do %>
+              <i class="material-icons">mode_edit</i>
+            <% end %>
+          <% end %>
+        </div>
+        <div class="card-content preview-highlight">
+          <span class="card-title">
+            <%= article.title %>
+          </span>
+          <%= @markdown.render(article.preview_code).html_safe %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+<% if can? :create, Article %>
+  <div class="fixed-action-btn vertical">
+    <%= link_to new_article_path, class: 'btn-floating btn-large waves-effect waves-light red' do %>
+      <i class="material-icons">add</i>
+    <% end %>
+  </div>
+<% end %>

@@ -1,0 +1,37 @@
+<div class="navbar-fixed">
+  <nav class="pirate-red-bg nav-extended">
+    <div class="shrink-app-header" id="shrink-app-header">
+      <div class="container height-100">
+        <div class="shrink-background-container">
+          <div class="shrink-background" id="shrink-background-back"></div>
+          <div class="shrink-background" id="shrink-background-front">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+        <div class="shrink-header-content">
+          <div class="shrink-app-toolbar" id="shrink-small-toolbar">
+            <div class="shrink-small-title" id="shrink-small-title">
+              <%= yield :title %>
+            </div>
+            <a href="/">Hvaderkode</a>
+            <a class="button-collapse hide-on-large-and-up" data-activates="mobile-menu" href="#">
+              <i class="material-icons">menu</i>
+            </a>
+            <ul class="right hide-on-med-and-down">
+              <%= render partial: 'shared/menu_items' %>
+            </ul>
+          </div>
+          <div class="shrink-app-toolbar shrink-tall" id="shrink-large-toolbar">
+            <div class="shrink-large-title" id="shrink-large-title">
+              <%= yield :title %>
+            </div>
+            <%= yield :search %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>

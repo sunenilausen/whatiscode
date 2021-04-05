@@ -1,0 +1,23 @@
+<div class="browser-default">
+  <%= @markdown.render("###{@article.title}").html_safe %>
+  <%= @markdown.render(@article.body).html_safe %>
+</div>
+<% if can? :manage, @article %>
+  <div class="fixed-action-btn vertical">
+    <%= link_to edit_article_path(@article), class: 'btn-floating btn-large btn-pirate-red waves-effect waves-light' do %>
+      <i class="large material-icons">mode_edit</i>
+    <% end %>
+    <ul>
+      <li>
+        <a class="btn-floating green btn-print waves-effect waves-light">
+          <i class="material-icons">insert_drive_file</i>
+        </a>
+      </li>
+      <li>
+        <%= link_to slides_article_path(@article), class: 'btn-floating yellow darken-1 waves-effect waves-light' do %>
+          <i class="material-icons">slideshow</i>
+        <% end %>
+      </li>
+    </ul>
+  </div>
+<% end %>

@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <%= render 'layouts/head' %>
+  </head>
+  <body>
+    <%= render 'shared/menu' %>
+    <%= render 'shared/flash' %>
+    <%= render 'shared/sidenav' %>
+    <div class="container background-container">
+      <div class="hide-on-small-only" id="space-invader"></div>
+      <div class="hide-on-small-only" id="pacman"></div>
+    </div>
+    <div class="container">
+      <% if content_for? :subnav %>
+        <div class="row">
+          <div class="col s12 m8 offset-m1">
+            <%= yield %>
+          </div>
+          <div class="col hide-on-small-only m3">
+            <ul class="table-of-contents">
+              <%= yield :subnav %>
+            </ul>
+          </div>
+        </div>
+      <% else %>
+        <%= yield %>
+      <% end %>
+    </div>
+  </body>
+</html>

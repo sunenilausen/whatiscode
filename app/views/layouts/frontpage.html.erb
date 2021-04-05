@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <%= render 'layouts/head' %>
+  </head>
+  <body>
+    <div class="front-page-body">
+      <div class="navbar">
+        <nav class="pirate-red-bg nav-extended">
+          <div class="container">
+            <div class="nav-wrapper">
+              <a class="brand-logo white-text" href="/">Hvaderkode</a>
+              <div class="right">
+                <a class="button-collapse hide-on-large-and-up" data-activates="mobile-menu" href="#">
+                  <i class="material-icons">menu</i>
+                </a>
+              </div>
+              <ul class="right hide-on-med-and-down">
+                <%= render partial: 'shared/menu_items' %>
+              </ul>
+            </div>
+            <% if content_for? :subnav %>
+              <div class="nav-content">
+                <ul class="tabs tabs-transparent">
+                  <%= yield :subnav %>
+                </ul>
+              </div>
+            <% end %>
+          </div>
+        </nav>
+      </div>
+      <%= render 'shared/sidenav' %>
+      <%= render 'shared/flash' %>
+      <%= yield %>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <%= render 'layouts/head' %>
+  </head>
+  <body>
+    <div class="shrinkable-body">
+      <%= render 'shared/shrink_menu' %>
+      <%= render 'shared/flash' %>
+      <%= render 'shared/sidenav' %>
+      <div class="container background-container">
+        <div class="hide-on-small-only" id="space-invader"></div>
+        <div class="hide-on-small-only" id="pacman"></div>
+      </div>
+      <div class="container <%= 'subnav' if content_for? :subnav %>">
+        <%= yield %>
+      </div>
+    </div>
+  </body>
+</html>

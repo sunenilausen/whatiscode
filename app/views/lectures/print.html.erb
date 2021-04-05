@@ -1,0 +1,23 @@
+<div class="browser-default">
+  <h1>
+    <%= @lecture.title %>
+  </h1>
+  <h2>
+    <%= @lecture.workshop.title %>
+    <%= '#' %>
+    <%= @lecture.number %>
+  </h2>
+  <%= @markdown.render(@lecture.body).html_safe %>
+  <div class="page-break"></div>
+  <% @lecture.article_insertions.each do |article_insertion| %>
+    <div class="avoid-page-break">
+      <%= @markdown.render("###{article_insertion.article.title}").html_safe %>
+      <%= @markdown.render(article_insertion.article.body).html_safe %>
+    </div>
+  <% end %>
+  <div class="fixed-action-btn">
+    <div class="btn-floating btn-large green btn-print">
+      <i class="material-icons">insert_drive_file</i>
+    </div>
+  </div>
+</div>

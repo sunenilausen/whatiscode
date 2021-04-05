@@ -364,7 +364,6 @@ DEPENDENCIES
   fabrication
   faker
   font-awesome-rails
-  haml
   i18n-tasks (~> 0.9.13)
   jquery-rails
   kramdown

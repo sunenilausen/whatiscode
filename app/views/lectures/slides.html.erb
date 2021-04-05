@@ -1,0 +1,11 @@
+<textarea class="remark-slides" id="source">
+  <% body = "##{@lecture.title}\r\n\r\n" %>
+  <% body << "\r\n\r\n####{@lecture.workshop.title} ##{@lecture.number}\r\n\r\n" %>
+  <% body << "#{@lecture.body}" %>
+  <% @lecture.article_insertions.each do |article_insertion| %>
+    <% body << "\r\n\r\n---\r\n\r\n" %>
+    <% body << "\r\n\r\n###{article_insertion.article.title}" %>
+    <% body << "\r\n\r\n#{article_insertion.article.body}" %>
+  <% end %>
+  <%= body %>
+</textarea>
