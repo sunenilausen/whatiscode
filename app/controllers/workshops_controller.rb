@@ -3,7 +3,6 @@ class WorkshopsController < ApplicationController
   skip_authorize_resource only: [:show, :index]
   before_action :set_workshop, only: [:edit, :update, :destroy]
   before_action :set_renderer, only: [:show]
-  layout 'shrinkable', only: [:index, :show]
 
   # GET /workshops
   def index

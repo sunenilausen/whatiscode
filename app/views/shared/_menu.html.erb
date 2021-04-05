@@ -2,16 +2,31 @@
   <nav class="pirate-red-bg nav-extended">
     <div class="container">
       <div class="nav-wrapper">
-        <a class="brand-logo white-text" href="/">Hvaderkode</a>
+        <a class="brand-logo white-text" href="/">Piratskibet</a>
         <div class="right">
           <a class="button-collapse hide-on-large-and-up" data-activates="mobile-menu" href="#">
             <i class="material-icons">menu</i>
           </a>
         </div>
         <ul class="right hide-on-med-and-down">
+          <% if @q %>
+            <li>
+              <a class="search-toggle">
+                <i class="material-icons">search</i>
+              </a>
+            </li>
+          <% end %>
           <%= render partial: 'shared/menu_items' %>
         </ul>
       </div>
     </div>
   </nav>
+  <% if @q %>
+    <%= search_form_for @q do |f| %>
+      <div class="input-field">
+        <%= f.search_field :title_or_category_title_cont %>
+        <i class="material-icons">close</i>
+      </div>
+    <% end %>
+  <% end %>
 </div>

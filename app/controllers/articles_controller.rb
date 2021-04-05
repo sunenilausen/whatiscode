@@ -3,7 +3,6 @@ class ArticlesController < ApplicationController
   load_and_authorize_resource only: [:new, :create, :update, :destroy]
   before_action :set_renderer, only: [:show, :index]
   layout 'menuless', only: [:slides]
-  layout 'search', only: [:index]
 
   # GET /articles
   def index
