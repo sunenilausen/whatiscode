@@ -4,7 +4,43 @@
       left: 0%;
       transform: translateX(0%);
     }
-  } 
+  }
+}
+
+.brand-logo {
+  display: block;
+  width: 140px;
+  height: 140px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+}
+
+.pirat-skibet-logo .st1 {
+  fill: #fff;
+}
+
+.pirat-skibet-logo .st2 {
+    opacity: .32;
+    -webkit-clip-path: url(#SVGID_2_);
+    clip-path: url(#SVGID_2_);
+}
+
+.pirat-skibet-logo .st3 {
+    -webkit-clip-path: url(#SVGID_4_);
+    clip-path: url(#SVGID_4_);
+    fill: #231f20;
+}
+
+.pirat-skibet-logo .st0 {
+    fill: #231f20;
+}
+
+.pirat-skibet-logo {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 .side-nav {
