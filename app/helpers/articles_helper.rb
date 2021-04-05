@@ -4,6 +4,7 @@ module ArticlesHelper
     s = replace_hints(s)
     s = replace_collapsibles(s)
     s = remove_tasks(s)
+    s = remove_prints(s)
     s = s.gsub("```", "~~~")
   end
 
@@ -16,6 +17,10 @@ module ArticlesHelper
 
   def remove_tasks(s)
     s.gsub("--- task ---", "").gsub("--- /task ---", "")
+  end
+
+  def remove_prints(s)
+    s.gsub("--- no-print ---", "").gsub("--- /no-print ---", "")
   end
 
   def replace_collapsibles(s)
