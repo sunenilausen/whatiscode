@@ -195,7 +195,8 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
     public_suffix (3.0.1)
-    puma (3.12.6)
+    puma (4.3.9)
+      nio4r (~> 2.0)
     racc (1.5.2)
     rack (2.2.3)
     rack-pjax (1.1.0)
@@ -374,7 +375,7 @@ DEPENDENCIES
   paranoia
   pg
   pry
-  puma (~> 3.12)
+  puma (~> 4.3)
   rails (~> 5.2.5)
   rails-assets-tether (>= 1.3.3)!
   rails_admin
