@@ -2,7 +2,7 @@
   "name": "railspirates",
   "private": true,
   "dependencies": {
-    "@rails/webpacker": "3.4",
+    "@rails/webpacker": "5.4",
     "simplemde": "^1.11.2",
     "yarn": "^1.22.0"
   },
